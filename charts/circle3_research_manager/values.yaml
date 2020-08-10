@@ -9,9 +9,7 @@ image:
   tag: master
   pullPolicy: Always
 
-
-nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: circle3-research-manager
 
 service:
   type: ClusterIP

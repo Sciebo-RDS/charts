@@ -9,9 +9,7 @@ image:
   tag: master
   pullPolicy: Always
 
-
-nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: circle2-exporter-service
 
 service:
   type: ClusterIP

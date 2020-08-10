@@ -10,7 +10,7 @@ image:
   pullPolicy: Always
 
 nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: circle1-port-owncloud
 
 service:
   type: ClusterIP

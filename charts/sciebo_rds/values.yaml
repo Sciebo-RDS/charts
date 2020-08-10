@@ -1,17 +1,10 @@
-circle1-port-zenodo:
-  fullnameOverride: circle1-port-zenodo
-circle1-port-owncloud:
-  fullnameOverride: circle1-port-owncloud
-circle2-exporter-service:
-  fullnameOverride: circle2-exporter-service
-circle2-port-service:
-  fullnameOverride: circle2-port-service
-circle2-metadata-service:
-  fullnameOverride: circle2-metadata-service
-circle3-token-storage:
-  fullnameOverride: circle3-token-storage
-circle3-research-manager:
-  fullnameOverride: circle3-research-manager
+circle1-port-zenodo: {}
+circle1-port-owncloud: {}
+circle2-exporter-service: {}
+circle2-port-service: {}
+circle2-metadata-service: {}
+circle3-token-storage: {}
+circle3-research-manager: {}
 jaeger:
   ## All jaeger options: https://github.com/jaegertracing/helm-charts
   fullnameOverride: jaeger

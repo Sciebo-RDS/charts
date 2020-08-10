@@ -10,8 +10,7 @@ image:
   pullPolicy: Always
 
 
-nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: circle1-port-zenodo
 
 service:
   type: ClusterIP
