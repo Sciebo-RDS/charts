@@ -37,7 +37,6 @@ redis-ha:
       rdbchecksum: "yes"
   persistentVolume:
     enabled: true
-    storageClassName: cindergold-delete
     accessModes:
       - ReadWriteOnce
     size: 1Gi
