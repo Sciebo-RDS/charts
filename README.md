@@ -56,3 +56,11 @@ If you need more parameters, please take a look into the values.yaml of the corr
 ### Dependencies
 
 This chart also use [jaeger](https://github.com/jaegertracing/helm-charts) and [redis-ha](https://github.com/DandyDeveloper/charts/tree/master/charts/redis-ha). Take a look to the corresponding repositories to find all options.
+
+### Uninstall 
+
+With the following command, you can remove the sciebo-rds system from your cluster.
+
+```bash
+helm uninstall sciebo-rds
+```
