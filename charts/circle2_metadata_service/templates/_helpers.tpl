@@ -47,9 +47,9 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 
 {{- define "circle2_metadata_service.domain" -}}
 {{- if .Values.global }}
-{{- .Values.global.domain | quote -}}
+{{- .Values.global.domain -}}
 {{- else if hasKey .Values "domain" }}
-{{- .Values.domain | quote -}}
+{{- .Values.domain -}}
 {{- else }}"localhost"{{- end -}}
 {{- end -}}
 

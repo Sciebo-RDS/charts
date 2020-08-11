@@ -46,9 +46,9 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 
 {{- define "circle1_port_owncloud.domain" -}}
 {{- if .Values.global }}
-{{- .Values.global.domain | quote -}}
+{{- .Values.global.domain -}}
 {{- else if hasKey .Values "domain" }}
-{{- .Values.domain | quote -}}
+{{- .Values.domain -}}
 {{- else }}"localhost"{{- end -}}
 {{- end -}}
 
