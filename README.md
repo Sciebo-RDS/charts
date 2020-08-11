@@ -25,16 +25,25 @@ The following commands will add the needed repository, add a values.yaml file an
 ```bash
 helm repo add sciebo-rds https://sciebo-rds.github.io/charts/
 cat > values.yaml <<EOF
-circle1-port-zenodo:
-  environment: 
-    ZENODO_ADDRESS: https://sandbox.zenodo.org
-    ZENODO_OAUTH_CLIENT_ID: ""
-    ZENODO_OAUTH_CLIENT_SECRET: ""
+global:
+  domain: localhost # will be used for ingress hosts, too
 circle1-port-owncloud:
   environment:
     OWNCLOUD_INSTALLATION_URL: https://localhost/owncloud
-    OWNCLOUD_OAUTH_CLIENT_ID: ""
-    OWNCLOUD_OAUTH_CLIENT_SECRET: ""
+    OWNCLOUD_OAUTH_CLIENT_ID: ABC
+    OWNCLOUD_OAUTH_CLIENT_SECRET: XYZ
+circle1-port-zenodo:
+  environment:
+    ZENODO_ADDRESS: https://sandbox.zenodo.org
+    ZENODO_OAUTH_CLIENT_ID: ABC
+    ZENODO_OAUTH_CLIENT_SECRET: XYZ
+circle2-exporter-service: {}
+circle2-port-service: {}
+circle2-metadata-service: {}
+circle3-research-manager: {}
+circle3-token-storage: {}
+redis: {}
+jaeger: {}
 EOF
 vi values.yaml
 helm upgrade sciebo-rds sciebo-rds/all --install --values values.yaml
