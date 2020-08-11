@@ -42,16 +42,32 @@ helm upgrade sciebo-rds sciebo-rds/all --install --values values.yaml
 
 The following table lists the most used configurable parameters of the Sciebo RDS chart and their default values.
 
-| Parameter                                                       | Description | Default                    |
-| --------------------------------------------------------------- | ----------- | -------------------------- |
-| global.domain                                                   |             | https://localhost          |
-| global.ingress.tls.secretName                                   |             | "sciebords-tls-public"     |
-| circle1-port-zenodo.environment.ZENODO_ADDRESS                  |             | https://sandbox.zenodo.org |
-| circle1-port-zenodo.environment.ZENODO_OAUTH_CLIENT_ID:         | Required    |                            |
-| circle1-port-zenodo.environment.ZENODO_OAUTH_CLIENT_SECRET:     | Required    |                            |
-| circle1-port-owncloud.environment.OWNCLOUD_INSTALLATION_URL:    |             | https://localhost/owncloud |
-| circle1-port-owncloud.environment.OWNCLOUD_OAUTH_CLIENT_ID:     | Required    |                            |
-| circle1-port-owncloud.environment.OWNCLOUD_OAUTH_CLIENT_SECRET: | Required    |                            |
+| Parameter                                                      | Description                                  | Default                                          |
+| -------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------ |
+| global.domain                                                  |                                              | https://localhost                                |
+| global.ingress.tls.secretName                                  |                                              | "sciebords-tls-public"                           |
+| circle1-port-zenodo.environment.ZENODO_ADDRESS                 |                                              | https://sandbox.zenodo.org                       |
+| circle1-port-zenodo.environment.ZENODO_OAUTH_CLIENT_ID         | Required                                     |                                                  |
+| circle1-port-zenodo.environment.ZENODO_OAUTH_CLIENT_SECRET     | Required                                     |                                                  |
+| circle1-port-owncloud.environment.OWNCLOUD_INSTALLATION_URL    |                                              | https://localhost/owncloud                       |
+| circle1-port-owncloud.environment.OWNCLOUD_OAUTH_CLIENT_ID     | Required                                     |                                                  |
+| circle1-port-owncloud.environment.OWNCLOUD_OAUTH_CLIENT_SECRET | Required                                     |                                                  |
+| circle3-token-storage.environment.REDIS_HOST                   | This redis host will be used to store values | redis-ha                                         |
+| circle3-token-storage.environment.REDIS_PORT                   | This redis port will be used to store values | 6379                                             |
+| redis-ha                                                       | See [Dependencies](#Dependencies)            |                                                  |
+| jaeger                                                         | See [Dependencies](#Dependencies)            |                                                  |
+| <SERVICE>.replicaCount                                         |                                              | 1                                                |
+| <SERVICE>.image.repository                                     |                                              | zivgitlab.wwu.io/sciebo-rds/sciebo-rds/<SERVICE> |
+| <SERVICE>.image.tag                                            |                                              | master                                           |
+| <SERVICE>.image.pullPolicy                                     |                                              | Always                                           |
+| <SERVICE>.service.type                                         |                                              | ClusterIP                                        |
+| <SERVICE>.service.port                                         |                                              | 80                                               |
+| <SERVICE>.service.targetPort                                   |                                              | 8080                                             |
+| <SERVICE>.service.annotations                                  |                                              | prometheus.io/scrape: "true"                     |
+| <SERVICE>.resources.*                                          | Set Limits and request resources             | {}                                               |
+| <SERVICE>.nodeSelector.*                                       |                                              | {}                                               |
+| <SERVICE>.tolerations.*                                        |                                              | []                                               |
+| <SERVICE>.affinity.*                                           |                                              | {}                                               |
 
 If you need more parameters, please take a look into the values.yaml of the corresponding service.
 
