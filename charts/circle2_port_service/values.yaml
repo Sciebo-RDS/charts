@@ -17,19 +17,11 @@ service:
   targetPort: 8080
   annotations:
      prometheus.io/scrape: 'true'
-
+     
+domain: localhost
 ingress:
-  enabled: true
-  
-  hosts:
-    - host: sciebords-dev.org
-      paths:
-      - /port-service
-
   tls:
-    - secretName: sciebords-tls-public
-      hosts:
-        - sciebords-dev.org
+    secretName: sciebords-tls-public
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -48,6 +40,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-environment:
-  FLASK_HOST_ADDRESS: https://sciebords-dev.org/port-service

@@ -24,9 +24,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          env:
-          - name: "FLASK_HOST_ADDRESS"
-            value: "{{ .Values.environment.FLASK_HOST_ADDRESS }}"
           envFrom:
           - configMapRef:
               name: mservice

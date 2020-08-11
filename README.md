@@ -44,6 +44,8 @@ The following table lists the most used configurable parameters of the Sciebo RD
 
 | Parameter                                                       | Description | Default                    |
 | --------------------------------------------------------------- | ----------- | -------------------------- |
+| global.domain                                                   |             | https://localhost          |
+| global.ingress.tls.secretName                                   |             | "sciebords-tls-public"     |
 | circle1-port-zenodo.environment.ZENODO_ADDRESS                  |             | https://sandbox.zenodo.org |
 | circle1-port-zenodo.environment.ZENODO_OAUTH_CLIENT_ID:         | Required    |                            |
 | circle1-port-zenodo.environment.ZENODO_OAUTH_CLIENT_SECRET:     | Required    |                            |

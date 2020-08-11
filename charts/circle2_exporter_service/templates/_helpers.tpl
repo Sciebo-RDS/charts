@@ -43,3 +43,19 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
+
+{{- define "circle2_exporter_service.domain" -}}
+{{- if .Values.global }}
+{{- .Values.global.domain }}
+{{- else if hasKey .Values "domain" }}
+{{- .Values.domain  }}
+{{- else }}localhost{{- end -}}
+{{- end -}}
+
+{{- define "circle2_exporter_service.secretName" -}}
+{{- if .Values.global }}
+{{- .Values.global.ingress.tls.secretName }}
+{{- else }}
+{{- .Values.ingress.tls.secretName }}
+{{- end -}}
+{{- end -}}

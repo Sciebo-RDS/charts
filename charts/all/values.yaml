@@ -1,3 +1,8 @@
+global:
+  domain: localhost
+  ingress:
+    tls:
+      secretName: sciebords-tls-public
 circle1-port-zenodo: {}
 circle1-port-owncloud: {}
 circle2-exporter-service: {}

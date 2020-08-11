@@ -43,3 +43,20 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
+
+
+{{- define "circle2_metadata_service.domain" -}}
+{{- if .Values.global }}
+{{- .Values.global.domain | quote -}}
+{{- else if hasKey .Values "domain" }}
+{{- .Values.domain | quote -}}
+{{- else }}"localhost"{{- end -}}
+{{- end -}}
+
+{{- define "circle2_metadata_service.secretName" -}}
+{{- if .Values.global}}
+{{ .Values.global.ingress.tls.secretName }}
+{{- else }}
+{{ .Values.ingress.tls.secretName }}
+{{- end -}}
+{{- end -}}

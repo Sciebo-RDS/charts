@@ -19,6 +19,11 @@ service:
   annotations:
     prometheus.io/scrape: "true"
 
+domain: localhost
+ingress:
+  tls:
+    secretName: sciebords-tls-public
+
 resources:
   {}
   # We usually recommend not to specify default resources and to leave this as a conscious
