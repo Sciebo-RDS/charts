@@ -184,6 +184,27 @@ entries:
   circle3-research-manager:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-08-12T15:19:55.469473119Z"
+    description: The project manager to manage projects within RDS
+    digest: d9e3abeec4e16b6c9e0706efe1519cecfa39ee8e0af875baa3ff51a4a8ac25db
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle3-research-manager
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle3-research-manager-0.1.3/circle3-research-manager-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-08-12T08:53:32.903972475Z"
     description: The project manager to manage projects within RDS
     digest: 98cc639a8bdd062aa4634261d100e9c3d905caa0d073bee05e635a8b1e40db3a
@@ -204,6 +225,27 @@ entries:
     - https://github.com/Sciebo-RDS/charts/releases/download/circle3-research-manager-0.1.2/circle3-research-manager-0.1.2.tgz
     version: 0.1.2
   circle3-token-storage:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-08-12T15:19:55.569542494Z"
+    description: The storage for tokens and passwords for services.
+    digest: 4dc0b78f10204c69f93ec9c582d9c29b180facd5f218c2f346de208c38011cd5
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle3-token-storage
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle3-token-storage-0.1.3/circle3-token-storage-0.1.3.tgz
+    version: 0.1.3
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-08-12T08:53:32.989267903Z"
