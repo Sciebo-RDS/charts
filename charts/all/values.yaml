@@ -3,6 +3,13 @@ global:
   ingress:
     tls:
       secretName: sciebords-tls-public
+feature:
+  jaeger: true
+  redis: true
+provisionDataStore:
+  cassandra: true
+  elasticsearch: false
+  kafka: false
 circle1-port-zenodo: {}
 circle1-port-owncloud: {}
 circle2-exporter-service: {}
