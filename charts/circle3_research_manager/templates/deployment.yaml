@@ -24,6 +24,11 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: REDIS_HOST
+            value: {{ .Values.environment.REDIS_HOST }}
+          - name: REDIS_PORT
+            value: {{ .Values.environment.REDIS_PORT }}
           envFrom:
           - configMapRef:
               name: proxy
