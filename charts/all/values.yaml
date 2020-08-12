@@ -6,10 +6,6 @@ global:
 feature:
   jaeger: true
   redis: true
-provisionDataStore:
-  cassandra: true
-  elasticsearch: false
-  kafka: false
 circle1-port-zenodo: {}
 circle1-port-owncloud: {}
 circle2-exporter-service: {}
@@ -18,6 +14,10 @@ circle2-metadata-service: {}
 circle3-token-storage: {}
 circle3-research-manager: {}
 jaeger:
+  provisionDataStore:
+    cassandra: true
+    elasticsearch: false
+    kafka: false
   ## All jaeger options: https://github.com/jaegertracing/helm-charts
   fullnameOverride: jaeger
   cassandra:
@@ -33,7 +33,7 @@ jaeger:
         cpu: 0.4
   schema:
     activeDeadlineSeconds: 600
-redis-ha:
+redis:
   ## All redis-ha options: https://github.com/DandyDeveloper/charts/tree/master/charts/redis-ha
   fullnameOverride: redis-ha
   redis:

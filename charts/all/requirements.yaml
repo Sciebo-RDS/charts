@@ -1,30 +1,49 @@
 dependencies:
-- name: circle1-port-zenodo
-  version: ^0.1.0
-  repository: https://sciebo-rds.github.io/charts
-- name: circle1-port-owncloud
-  version: ^0.1.0
-  repository: https://sciebo-rds.github.io/charts
-- name: circle2-exporter-service
-  version: ^0.1.0
-  repository: https://sciebo-rds.github.io/charts
-- name: circle2-port-service
-  version: ^0.1.0
-  repository: https://sciebo-rds.github.io/charts
-- name: circle2-metadata-service
-  version: ^0.1.0
-  repository: https://sciebo-rds.github.io/charts
-- name: circle3-token-storage
-  version: ^0.1.0
-  repository: https://sciebo-rds.github.io/charts
-- name: circle3-research-manager
-  version: ^0.1.0
-  repository: https://sciebo-rds.github.io/charts
-- name: jaeger
-  version: ^0.34.0
-  repository: https://jaegertracing.github.io/helm-charts
-  condition: feature.jaeger
-- name: redis-ha
-  version: ^4.6.2
-  repository: https://dandydeveloper.github.io/charts
-  condition: feature.redis
+  - name: circle1-port-zenodo
+    version: ^0.1.0
+    repository: https://sciebo-rds.github.io/charts
+    tags:
+      - circle1
+  - name: circle1-port-owncloud
+    version: ^0.1.0
+    repository: https://sciebo-rds.github.io/charts
+    tags:
+      - circle1
+  - name: circle2-exporter-service
+    version: ^0.1.0
+    repository: https://sciebo-rds.github.io/charts
+    tags:
+      - circle2
+  - name: circle2-port-service
+    version: ^0.1.0
+    repository: https://sciebo-rds.github.io/charts
+    tags:
+      - circle2
+  - name: circle2-metadata-service
+    version: ^0.1.0
+    repository: https://sciebo-rds.github.io/charts
+    tags:
+      - circle2
+  - name: circle3-token-storage
+    version: ^0.1.0
+    repository: https://sciebo-rds.github.io/charts
+    tags:
+      - circle3
+  - name: circle3-research-manager
+    version: ^0.1.0
+    repository: https://sciebo-rds.github.io/charts
+    tags:
+      - circle3
+  - name: jaeger
+    version: ^0.34.0
+    repository: https://jaegertracing.github.io/helm-charts
+    condition: feature.jaeger
+    tags:
+      - monitoring
+  - name: redis-ha
+    alias: redis
+    version: ^4.6.2
+    repository: https://dandydeveloper.github.io/charts
+    condition: feature.redis
+    tags:
+      - storage

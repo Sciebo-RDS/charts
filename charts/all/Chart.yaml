@@ -6,15 +6,15 @@ version: 0.1.1
 home: https://www.research-data-services.org/
 engine: gotpl
 keywords:
-- research
-- data
-- services
-- zenodo
+  - research
+  - data
+  - services
+  - zenodo
 maintainers:
-- email: peter.heiss@uni-muenster.de
-  name: Heiss
-details:
-  This Helm chart provides a system to handle the research data in your cloud to push them to other services.
+  - email: peter.heiss@uni-muenster.de
+    name: Heiss
+details: This Helm chart provides a system to handle the research data in your cloud to push them to other services.
 sources:
-- https://www.research-data-services.org/
+  - https://www.research-data-services.org/
 icon: https://www.research-data-services.org/img/sciebo.png
+
