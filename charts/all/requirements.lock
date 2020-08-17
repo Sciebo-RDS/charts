@@ -29,5 +29,5 @@ dependencies:
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:74f558ef1f3ba8e9257722eaf0dae15e7b2e5079c77a079d8f738346dc8cdccc
-generated: "2020-08-17T10:21:02.4180136+02:00"
+digest: sha256:e355330884a2dff38f02831b7e8307f5c7194c9e1d0d703e8c6f16c792dec11a
+generated: "2020-08-17T10:40:41.7739045+02:00"
