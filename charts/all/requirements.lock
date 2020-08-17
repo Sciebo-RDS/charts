@@ -16,18 +16,15 @@ dependencies:
   version: 0.1.2
 - name: circle3-token-storage
   repository: file://../circle3_token_storage
-  version: 0.1.4
+  version: 0.1.5
 - name: circle3-research-manager
   repository: file://../circle3_research_manager
-  version: 0.1.4
+  version: 0.1.5
 - name: jaeger
   repository: https://jaegertracing.github.io/helm-charts
   version: ^0.34.0
-- name: redis-ha
-  repository: https://dandydeveloper.github.io/charts
-  version: ^4.6.2
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:e355330884a2dff38f02831b7e8307f5c7194c9e1d0d703e8c6f16c792dec11a
-generated: "2020-08-17T10:40:41.7739045+02:00"
+digest: sha256:718b87ae558b36b72067f95369867c698691edeb13de17f2df3a73d9c83478aa
+generated: "2020-08-17T10:48:21.0114578+02:00"

@@ -5,9 +5,7 @@ global:
       secretName: sciebords-tls-public
 feature:
   jaeger: true
-  redis:
-    ha: false
-    cluster: true
+  redis: true
 circle1-port-zenodo: {}
 circle1-port-owncloud: {}
 circle2-exporter-service: {}
