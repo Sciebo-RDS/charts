@@ -16,7 +16,7 @@ dependencies:
   version: 0.1.2
 - name: circle3-token-storage
   repository: file://../circle3_token_storage
-  version: 0.1.5
+  version: 0.1.7
 - name: circle3-research-manager
   repository: file://../circle3_research_manager
   version: 0.1.5
@@ -26,5 +26,5 @@ dependencies:
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:718b87ae558b36b72067f95369867c698691edeb13de17f2df3a73d9c83478aa
-generated: "2020-08-17T10:48:21.0114578+02:00"
+digest: sha256:66a898c06a75ac49480afc8b65501516a6db5dfd6f42f1b155b82cd9110ece73
+generated: "2020-08-17T12:43:10.0316422+02:00"
