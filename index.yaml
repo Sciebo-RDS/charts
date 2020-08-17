@@ -556,6 +556,27 @@ entries:
   circle3-token-storage:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-08-17T10:38:59.191479044Z"
+    description: The storage for tokens and passwords for services.
+    digest: 4f2489c756548b0a86a5a33c075b802f90296667e951907b5cb049216a7e44da
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle3-token-storage
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle3-token-storage-0.1.6/circle3-token-storage-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-08-17T08:45:56.257028545Z"
     description: The storage for tokens and passwords for services.
     digest: 49cb0588ae180d16581442e104628272b55f2d20a0205e7b22b9543867e02cd9
