@@ -29,6 +29,8 @@ spec:
             value: {{ .Values.environment.REDIS_HOST | quote }}
           - name: REDIS_PORT
             value: {{ .Values.environment.REDIS_PORT | quote }}
+          - name: use_inmemory_as_fallover
+            value: {{ .Values.environment.IN_MEMORY_AS_FAILOVER | quote }}
           envFrom:
           - configMapRef:
               name: proxy
