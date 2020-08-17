@@ -3,6 +3,83 @@ entries:
   all:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-08-17T08:45:56.059600318Z"
+    dependencies:
+    - name: circle1-port-zenodo
+      repository: file://../circle1_port_zenodo
+      tags:
+      - circle1
+      version: ^0.1.0
+    - name: circle1-port-owncloud
+      repository: file://../circle1_port_owncloud
+      tags:
+      - circle1
+      version: ^0.1.0
+    - name: circle2-exporter-service
+      repository: file://../circle2_exporter_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle2-port-service
+      repository: file://../circle2_port_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle2-metadata-service
+      repository: file://../circle2_metadata_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle3-token-storage
+      repository: file://../circle3_token_storage
+      tags:
+      - circle3
+      version: ^0.1.0
+    - name: circle3-research-manager
+      repository: file://../circle3_research_manager
+      tags:
+      - circle3
+      version: ^0.1.0
+    - condition: feature.jaeger
+      name: jaeger
+      repository: https://jaegertracing.github.io/helm-charts
+      tags:
+      - monitoring
+      version: ^0.34.0
+    - alias: redis
+      condition: feature.redis.ha
+      name: redis-ha
+      repository: https://dandydeveloper.github.io/charts
+      tags:
+      - storage
+      version: ^4.6.2
+    - alias: redis
+      condition: feature.redis.cluster
+      name: redis-cluster
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^3.2.0
+    description: A single chart for installing whole sciebo rds ecosystem.
+    digest: 74f9d45354ea92278d762d17a0f3f99c2247f6ac376c9afd9d031bea9af9a4a3
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: all
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/all-0.1.5/all-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-08-12T15:33:09.886624462Z"
     dependencies:
     - name: circle1-port-zenodo
@@ -324,6 +401,27 @@ entries:
   circle3-research-manager:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-08-17T08:45:56.157233596Z"
+    description: The project manager to manage projects within RDS
+    digest: b7c2e711a470d0a325d2c0a0b056b9d5bd7e3b0f8f2ff0d0c6573a97b272f9a0
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle3-research-manager
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle3-research-manager-0.1.5/circle3-research-manager-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-08-12T15:33:10.007612257Z"
     description: The project manager to manage projects within RDS
     digest: dc62c0b509ab17763a4e9f93c712de8e124a614d65e736feeb44e6555e3494f0
@@ -386,6 +484,27 @@ entries:
     - https://github.com/Sciebo-RDS/charts/releases/download/circle3-research-manager-0.1.2/circle3-research-manager-0.1.2.tgz
     version: 0.1.2
   circle3-token-storage:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-08-17T08:45:56.257028545Z"
+    description: The storage for tokens and passwords for services.
+    digest: 49cb0588ae180d16581442e104628272b55f2d20a0205e7b22b9543867e02cd9
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle3-token-storage
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle3-token-storage-0.1.5/circle3-token-storage-0.1.5.tgz
+    version: 0.1.5
   - apiVersion: v1
     appVersion: "1.0"
     created: "2020-08-12T15:33:10.117997024Z"
