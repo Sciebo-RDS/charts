@@ -5,7 +5,9 @@ global:
       secretName: sciebords-tls-public
 feature:
   jaeger: true
-  redis: true
+  redis:
+    ha: false
+    cluster: true
 circle1-port-zenodo: {}
 circle1-port-owncloud: {}
 circle2-exporter-service: {}
@@ -33,9 +35,16 @@ jaeger:
         cpu: 0.4
   schema:
     activeDeadlineSeconds: 600
-redis:
-  ## All redis-ha options: https://github.com/DandyDeveloper/charts/tree/master/charts/redis-ha
-  fullnameOverride: redis-ha
+redis-cluster:
+  ## All redis-cluster options: https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster
+  fullnameOverride: redis
+  usePassword: false
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    size: 1Gi
+    annotations: {}
   redis:
     config:
       ## All redis options: http://download.redis.io/redis-stable/redis.conf
@@ -47,12 +56,3 @@ redis:
       repl-diskless-sync: "yes"
       rdbcompression: "yes"
       rdbchecksum: "yes"
-  persistentVolume:
-    enabled: true
-    accessModes:
-      - ReadWriteOnce
-    size: 1Gi
-    annotations: {}
-  init:
-    resources: {}
-  emptyDir: {}

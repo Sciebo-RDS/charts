@@ -44,6 +44,13 @@ dependencies:
     alias: redis
     version: ^4.6.2
     repository: https://dandydeveloper.github.io/charts
-    condition: feature.redis
+    condition: feature.redis.ha
+    tags:
+      - storage
+  - name: redis-cluster
+    alias: redis-cluster
+    version: ^3.2.0
+    repository: https://charts.bitnami.com/bitnami
+    condition: feature.redis.cluster
     tags:
       - storage

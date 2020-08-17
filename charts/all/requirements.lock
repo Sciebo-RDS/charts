@@ -26,5 +26,8 @@ dependencies:
 - name: redis-ha
   repository: https://dandydeveloper.github.io/charts
   version: ^4.6.2
-digest: sha256:ebd4eb832cc40a05d60121be937563e8819f572a7ef42d1871dadda812779d73
-generated: "2020-08-12T17:31:54.4770684+02:00"
+- name: redis-cluster
+  repository: https://charts.bitnami.com/bitnami
+  version: ^3.2.0
+digest: sha256:74f558ef1f3ba8e9257722eaf0dae15e7b2e5079c77a079d8f738346dc8cdccc
+generated: "2020-08-17T10:21:02.4180136+02:00"

@@ -43,5 +43,5 @@ tolerations: []
 affinity: {}
 
 environment:
-  REDIS_HOST: redis-ha
+  REDIS_HOST: redis
   REDIS_PORT: 6379
