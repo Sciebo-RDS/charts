@@ -25,12 +25,12 @@ dependencies:
     tags:
       - circle2
   - name: circle3-token-storage
-    version: ^0.1.0
+    version: ^0.2.0
     repository: file://../circle3_token_storage
     tags:
       - circle3
   - name: circle3-research-manager
-    version: ^0.1.0
+    version: ^0.2.0
     repository: file://../circle3_research_manager
     tags:
       - circle3

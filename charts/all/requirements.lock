@@ -1,30 +1,30 @@
 dependencies:
 - name: circle1-port-zenodo
   repository: file://../circle1_port_zenodo
-  version: 0.1.2
+  version: 0.1.3
 - name: circle1-port-owncloud
   repository: file://../circle1_port_owncloud
-  version: 0.1.2
+  version: 0.1.3
 - name: circle2-exporter-service
   repository: file://../circle2_exporter_service
-  version: 0.1.2
+  version: 0.1.3
 - name: circle2-port-service
   repository: file://../circle2_port_service
-  version: 0.1.2
+  version: 0.1.3
 - name: circle2-metadata-service
   repository: file://../circle2_metadata_service
-  version: 0.1.2
+  version: 0.1.3
 - name: circle3-token-storage
   repository: file://../circle3_token_storage
-  version: 0.1.7
+  version: 0.2.0
 - name: circle3-research-manager
   repository: file://../circle3_research_manager
-  version: 0.1.5
+  version: 0.2.0
 - name: jaeger
   repository: https://jaegertracing.github.io/helm-charts
   version: ^0.34.0
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:66a898c06a75ac49480afc8b65501516a6db5dfd6f42f1b155b82cd9110ece73
-generated: "2020-08-17T12:43:10.0316422+02:00"
+digest: sha256:9712f4669e8826f01ea6cc476cb9ba748898a12a86f51a586d6bea96908ca277
+generated: "2020-08-19T10:50:29.8255811+02:00"
