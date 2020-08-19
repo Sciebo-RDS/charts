@@ -9,6 +9,11 @@ image:
   tag: master
   pullPolicy: Always
 
+labels:
+  app.kubernetes.io/component: research-data-services.org
+  app.kubernetes.io/part-of: core
+  research-data-services.org/layer: layer3
+
 fullnameOverride: circle3-research-manager
 
 service:
@@ -17,7 +22,7 @@ service:
   targetPort: 8080
   annotations:
     prometheus.io/scrape: "true"
-    
+
 domain: localhost
 ingress:
   tls:
@@ -45,3 +50,4 @@ affinity: {}
 environment:
   REDIS_HOST: redis
   REDIS_PORT: 6379
+  IN_MEMORY_AS_FAILOVER: "False"

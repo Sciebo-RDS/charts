@@ -9,6 +9,10 @@ image:
   tag: master
   pullPolicy: Always
 
+labels:
+  app.kubernetes.io/component: research-data-services.org
+  app.kubernetes.io/part-of: connector
+  research-data-services.org/layer: layer1
 
 fullnameOverride: circle1-port-zenodo
 

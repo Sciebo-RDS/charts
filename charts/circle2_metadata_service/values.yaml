@@ -9,6 +9,11 @@ image:
   tag: master
   pullPolicy: Always
 
+labels:
+  app.kubernetes.io/component: research-data-services.org
+  app.kubernetes.io/part-of: service
+  research-data-services.org/layer: layer2
+
 fullnameOverride: circle2-metadata-service
 
 service:
