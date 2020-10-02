@@ -498,6 +498,28 @@ entries:
     urls:
     - https://github.com/Sciebo-RDS/charts/releases/download/all-0.1.2/all-0.1.2.tgz
     version: 0.1.2
+  circle1-port-openscienceframework:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-10-02T07:50:46.10961753Z"
+    description: A Helm chart for Kubernetes
+    digest: 7b1d3c8517bd039e8bba0b08a3d5243d89b6483d755129b12dc43988cf51e355
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - openscienceframework
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle1-port-openscienceframework
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle1-port-openscienceframework-0.1.0/circle1-port-openscienceframework-0.1.0.tgz
+    version: 0.1.0
   circle1-port-owncloud:
   - apiVersion: v1
     appVersion: "1.0"
