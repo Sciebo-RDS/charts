@@ -16,6 +16,11 @@ spec:
         app.kubernetes.io/name: {{ include "circle3_research_manager.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      initContainers:
+        - name: deploy
+          image: redis
+          command: [ "sh" ]
+          args: [ "-c", 'while [ "$(redis-cli -h $REDIS_PORT_6379_TCP_ADDR ping)" != "PONG" ]; do sleep 2; done' ]
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
