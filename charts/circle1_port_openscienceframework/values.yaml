@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: zivgitlab.wwu.io/sciebo-rds/sciebo-rds/port_openscienceframework
-  tag: 64598
+  tag: 65479
   pullPolicy: Always
 
 labels:
