@@ -17,4 +17,3 @@ details: This Helm chart provides a system to handle the research data in your c
 sources:
   - https://www.research-data-services.org/
 icon: https://www.research-data-services.org/img/sciebo.png
-metadata: {}
