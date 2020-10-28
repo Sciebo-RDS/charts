@@ -8,6 +8,7 @@ feature:
   redis: true
 circle1-port-zenodo: {}
 circle1-port-owncloud: {}
+circle1-port-openscienceframework: {}
 circle2-exporter-service: {}
 circle2-port-service: {}
 circle2-metadata-service: {}
