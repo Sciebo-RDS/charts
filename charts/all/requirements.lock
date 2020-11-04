@@ -4,7 +4,7 @@ dependencies:
   version: 0.1.1
 - name: circle1-port-zenodo
   repository: file://../circle1_port_zenodo
-  version: 0.1.4
+  version: 0.1.5
 - name: circle1-port-owncloud
   repository: file://../circle1_port_owncloud
   version: 0.1.4
@@ -29,5 +29,5 @@ dependencies:
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:b81084f1ca8363f4e5f10322b8640319cbd26a9af3113638695c43ffce71eb5a
-generated: "2020-10-28T17:54:40.787803+01:00"
+digest: sha256:486e9948e01903a92e09418631b15c7116573c398bb052a736d33fd5b5b5b614
+generated: "2020-11-04T10:03:01.9664773+01:00"
