@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: heiss/port_datasafe
+  repository: docker.io/heiss/port_datasafe
   tag: latest
   pullPolicy: Always
 
