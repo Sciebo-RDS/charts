@@ -27,6 +27,18 @@ spec:
           env:
           - name: "DATASAFE_ADDRESS"
             value: "{{ .Values.environment.DATASAFE_ADDRESS }}"
+          - name: "OWNCLOUD_INSTALLATION_PATH"
+            value: "{{ .Values.environment.OWNCLOUD_INSTALLATION_PATH }}"
+          - name: "DATASAFE_PUBLICKEY"
+            valueFrom:
+              secretKeyRef:
+                name: datasafe-keys
+                key: publicKey.pem
+          - name: "DATASAFE_PRIVATEKEY"
+            valueFrom:
+              secretKeyRef:
+                name: datasafe-keys
+                key: privateKey.pem
           envFrom:
           - configMapRef:
               name: mservice
