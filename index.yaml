@@ -721,6 +721,27 @@ entries:
   circle1-port-datasafe:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2020-12-07T10:23:19.508695677Z"
+    description: A Helm chart for Kubernetes
+    digest: 1c5c7f2e5520f3794ed9929b2ca58ee2923dbccd562f37ba5730e5a88e67bc1a
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - datasafe
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle1-port-datasafe
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle1-port-datasafe-0.1.1/circle1-port-datasafe-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2020-12-04T10:20:23.092544796Z"
     description: A Helm chart for Kubernetes
     digest: 063588bd024c4b606e35b03778c64733370a0242bfb26cdf40f8f94bb4cab136
