@@ -8,13 +8,11 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "circle2_port_service.name" . }}
-      app.kubernetes.io/instance: {{ .Release.Name }}
+{{ include "circle2_port_service.labels" . | indent 6 }}
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "circle2_port_service.name" . }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
+{{ include "circle2_port_service.labels" . | indent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
