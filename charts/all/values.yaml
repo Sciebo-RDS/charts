@@ -6,9 +6,14 @@ global:
 feature:
   jaeger: true
   redis: true
-circle1-port-zenodo: {}
-circle1-port-owncloud: {}
-circle1-port-openscienceframework: {}
+circle1-port-zenodo:
+  enabled: false
+circle1-port-owncloud:
+  enabled: false
+circle1-port-openscienceframework:
+  enabled: false
+circle1-port-datasafe:
+  enabled: false
 circle2-exporter-service: {}
 circle2-port-service: {}
 circle2-metadata-service: {}

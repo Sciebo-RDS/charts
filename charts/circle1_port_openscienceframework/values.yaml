@@ -48,6 +48,7 @@ tolerations: []
 affinity: {}
 
 environment:
-  OPENSCIENCEFRAMEWORK_ADDRESS: https://accounts.test.osf.io
-  OPENSCIENCEFRAMEWORK_OAUTH_CLIENT_ID: ""
-  OPENSCIENCEFRAMEWORK_OAUTH_CLIENT_SECRET: ""
+  ADDRESS: https://accounts.test.osf.io
+  API_ADDRESS: https://api.test.osf.io/v2
+  OAUTH_CLIENT_ID: ""
+  OAUTH_CLIENT_SECRET: ""

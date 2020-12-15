@@ -47,6 +47,6 @@ tolerations: []
 affinity: {}
 
 environment: 
-  ZENODO_ADDRESS: https://sandbox.zenodo.org
-  ZENODO_OAUTH_CLIENT_ID: ""
-  ZENODO_OAUTH_CLIENT_SECRET: ""
+  ADDRESS: https://sandbox.zenodo.org
+  OAUTH_CLIENT_ID: ""
+  OAUTH_CLIENT_SECRET: ""

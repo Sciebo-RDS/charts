@@ -48,5 +48,5 @@ tolerations: []
 affinity: {}
 
 environment:
-  DATASAFE_ADDRESS: https://datasafe-dev.uni-muenster.de
+  ADDRESS: https://datasafe-dev.uni-muenster.de
   OWNCLOUD_INSTALLATION_PATH: https://sciebords.uni-muenster.de

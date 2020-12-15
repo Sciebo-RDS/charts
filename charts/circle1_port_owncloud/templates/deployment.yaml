@@ -24,11 +24,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: "OWNCLOUD_OAUTH_CLIENT_ID"
-            value: "{{ .Values.environment.OWNCLOUD_OAUTH_CLIENT_ID }}"
-          - name: OWNCLOUD_INSTALLATION_URL
-            value: "{{ .Values.environment.OWNCLOUD_INSTALLATION_URL }}"
+            value: "{{ .Values.environment.OAUTH_CLIENT_ID }}"
+          - name: "OWNCLOUD_INSTALLATION_URL"
+            value: "{{ .Values.environment.ADDRESS }}"
           - name: "OWNCLOUD_OAUTH_CLIENT_SECRET"
-            value: "{{ .Values.environment.OWNCLOUD_OAUTH_CLIENT_SECRET }}"
+            value: "{{ .Values.environment.OAUTH_CLIENT_SECRET }}"
           envFrom:
           - configMapRef:
               name: mservice

@@ -24,11 +24,11 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: "ZENODO_OAUTH_CLIENT_ID"
-            value: "{{ .Values.environment.ZENODO_OAUTH_CLIENT_ID }}"
+            value: "{{ .Values.environment.OAUTH_CLIENT_ID }}"
           - name: "ZENODO_ADDRESS"
-            value: "{{ .Values.environment.ZENODO_ADDRESS }}"
+            value: "{{ .Values.environment.ADDRESS }}"
           - name: "ZENODO_OAUTH_CLIENT_SECRET"
-            value: "{{ .Values.environment.ZENODO_OAUTH_CLIENT_SECRET }}"
+            value: "{{ .Values.environment.OAUTH_CLIENT_SECRET }}"
           envFrom:
           - configMapRef:
               name: mservice

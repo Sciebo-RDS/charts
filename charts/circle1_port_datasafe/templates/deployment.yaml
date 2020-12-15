@@ -24,7 +24,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: "DATASAFE_ADDRESS"
-            value: "{{ .Values.environment.DATASAFE_ADDRESS }}"
+            value: "{{ .Values.environment.ADDRESS }}"
           - name: "OWNCLOUD_INSTALLATION_PATH"
             value: "{{ .Values.environment.OWNCLOUD_INSTALLATION_PATH }}"
           - name: "DATASAFE_PUBLICKEY"

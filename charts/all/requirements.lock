@@ -8,6 +8,12 @@ dependencies:
 - name: circle1-port-owncloud
   repository: file://../circle1_port_owncloud
   version: 0.1.5
+- name: circle1-port-openscienceframework
+  repository: file://../circle1_port_openscienceframework
+  version: 0.1.2
+- name: circle1-port-datasafe
+  repository: file://../circle1_port_datasafe
+  version: 0.1.2
 - name: circle2-exporter-service
   repository: file://../circle2_exporter_service
   version: 0.1.5
@@ -29,5 +35,5 @@ dependencies:
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:2b270ed7c50b3adf24c1be81290a000a83b83a19eef036e3f1965d1a5e6f52ea
-generated: "2020-12-07T13:21:56.1909841+01:00"
+digest: sha256:0df8e43bbdc9f3038c9cf06c94d9125b39a8f3a48ada0f65cee23c8bd17c05fd
+generated: "2020-12-15T15:30:19.1710762+01:00"
