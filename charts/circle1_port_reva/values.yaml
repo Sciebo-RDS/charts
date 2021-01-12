@@ -19,7 +19,7 @@ fullnameOverride: circle1-port-reva
 service:
   type: ClusterIP
   port: 80
-  targetPort: 8080
+  targetPort: 80
   annotations:
     prometheus.io/scrape: "true"
 
