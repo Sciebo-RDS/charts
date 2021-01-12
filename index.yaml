@@ -3,6 +3,102 @@ entries:
   all:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-01-12T09:35:30.114807068Z"
+    dependencies:
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-openscienceframework
+      repository: file://../circle1_port_openscienceframework
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-zenodo
+      repository: file://../circle1_port_zenodo
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-owncloud.enabled
+      name: circle1-port-owncloud
+      repository: file://../circle1_port_owncloud
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-openscienceframework.enabled
+      name: circle1-port-openscienceframework
+      repository: file://../circle1_port_openscienceframework
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-datasafe.enabled
+      name: circle1-port-datasafe
+      repository: file://../circle1_port_datasafe
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-reva.enabled
+      name: circle1-port-reva
+      repository: file://../circle1_port_reva
+      tags:
+      - circle1
+      version: ^0.1.0
+    - name: circle2-exporter-service
+      repository: file://../circle2_exporter_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle2-port-service
+      repository: file://../circle2_port_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle2-metadata-service
+      repository: file://../circle2_metadata_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle3-token-storage
+      repository: file://../circle3_token_storage
+      tags:
+      - circle3
+      version: ^0.2.0
+    - name: circle3-research-manager
+      repository: file://../circle3_research_manager
+      tags:
+      - circle3
+      version: ^0.2.0
+    - condition: feature.jaeger
+      name: jaeger
+      repository: https://jaegertracing.github.io/helm-charts
+      tags:
+      - monitoring
+      version: ^0.34.0
+    - alias: redis
+      condition: feature.redis
+      name: redis-cluster
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^3.2.0
+    description: A single chart for installing whole sciebo rds ecosystem.
+    digest: 88e0ed1f56946d447cebfc2c5c93a6dbecbfb711491fe2864d5e33200d388057
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: all
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/all-0.4.4/all-0.4.4.tgz
+    version: 0.4.4
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-01-08T16:03:25.544170455Z"
     dependencies:
     - condition: circle1-port-zenodo.enabled
@@ -1297,6 +1393,28 @@ entries:
     urls:
     - https://github.com/Sciebo-RDS/charts/releases/download/circle1-port-owncloud-0.1.2/circle1-port-owncloud-0.1.2.tgz
     version: 0.1.2
+  circle1-port-reva:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-01-12T09:35:30.215885627Z"
+    description: A Helm chart for Kubernetes
+    digest: 83deb873b4230dd8ae955922741549038b2888fd4382062b2449cb92ccb8a3da
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - reva
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle1-port-reva
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle1-port-reva-0.1.0/circle1-port-reva-0.1.0.tgz
+    version: 0.1.0
   circle1-port-zenodo:
   - apiVersion: v1
     appVersion: "1.0"
