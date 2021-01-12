@@ -23,14 +23,12 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-          - name: "reva_OAUTH_CLIENT_ID"
-            value: "{{ .Values.environment.OAUTH_CLIENT_ID }}"
-          - name: "reva_ADDRESS"
-            value: "{{ .Values.environment.ADDRESS }}"
-          - name: "reva_API_ADDRESS"
-            value: "{{ .Values.environment.API_ADDRESS }}"
-          - name: "reva_OAUTH_CLIENT_SECRET"
-            value: "{{ .Values.environment.OAUTH_CLIENT_SECRET }}"
+          - name: "RDS_REVA_HOST"
+            value: "{{ .Values.environment.RDS_REVA_HOST }}"
+          - name: "RDS_REVA_USER"
+            value: "{{ .Values.environment.RDS_REVA_USER }}"
+          - name: "RDS_REVA_PASSWORD"
+            value: "{{ .Values.environment.RDS_REVA_PASSWORD }}"
           envFrom:
           - configMapRef:
               name: mservice
