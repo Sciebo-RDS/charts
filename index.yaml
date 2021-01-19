@@ -3,6 +3,102 @@ entries:
   all:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-01-19T09:49:58.534871403Z"
+    dependencies:
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-openscienceframework
+      repository: file://../circle1_port_openscienceframework
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-zenodo
+      repository: file://../circle1_port_zenodo
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-owncloud.enabled
+      name: circle1-port-owncloud
+      repository: file://../circle1_port_owncloud
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-openscienceframework.enabled
+      name: circle1-port-openscienceframework
+      repository: file://../circle1_port_openscienceframework
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-datasafe.enabled
+      name: circle1-port-datasafe
+      repository: file://../circle1_port_datasafe
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-reva.enabled
+      name: circle1-port-reva
+      repository: file://../circle1_port_reva
+      tags:
+      - circle1
+      version: ^0.1.0
+    - name: circle2-exporter-service
+      repository: file://../circle2_exporter_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle2-port-service
+      repository: file://../circle2_port_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle2-metadata-service
+      repository: file://../circle2_metadata_service
+      tags:
+      - circle2
+      version: ^0.1.0
+    - name: circle3-token-storage
+      repository: file://../circle3_token_storage
+      tags:
+      - circle3
+      version: ^0.2.0
+    - name: circle3-research-manager
+      repository: file://../circle3_research_manager
+      tags:
+      - circle3
+      version: ^0.2.0
+    - condition: feature.jaeger
+      name: jaeger
+      repository: https://jaegertracing.github.io/helm-charts
+      tags:
+      - monitoring
+      version: ^0.34.0
+    - alias: redis
+      condition: feature.redis
+      name: redis-cluster
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^3.2.0
+    description: A single chart for installing whole sciebo rds ecosystem.
+    digest: a4b3635c51a9abbbd4bdee8418609f8d054b1f2acc8acdbdbe4c0f21681ec240
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: all
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/all-0.4.7/all-0.4.7.tgz
+    version: 0.4.7
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-01-12T15:35:12.870020149Z"
     dependencies:
     - condition: circle1-port-zenodo.enabled
@@ -1490,6 +1586,27 @@ entries:
     - https://github.com/Sciebo-RDS/charts/releases/download/circle1-port-owncloud-0.1.2/circle1-port-owncloud-0.1.2.tgz
     version: 0.1.2
   circle1-port-reva:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-01-19T09:49:58.788079837Z"
+    description: A Helm chart for Kubernetes
+    digest: 7e20c591201346ae1abacb8e82b4eb928c3cf932e4e3d70579dc70f7c95b8868
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - reva
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle1-port-reva
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle1-port-reva-0.1.3/circle1-port-reva-0.1.3.tgz
+    version: 0.1.3
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-01-12T15:35:12.955535586Z"
