@@ -5,6 +5,10 @@ metadata:
   labels:
 {{ include "circle1_port_reva.labels" . | indent 4 }}
 spec:
+  initContainers:
+    - name: init-tokenstorage
+      image: busybox:1.28
+      command: ['sh', '-c', "until nslookup circle3-token-storage.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for circle3-token-storage; sleep 2; done"]
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
