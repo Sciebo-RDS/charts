@@ -16,7 +16,7 @@ dependencies:
   version: 0.2.0
 - name: circle1-port-reva
   repository: file://../circle1_port_reva
-  version: 0.1.2
+  version: 0.1.3
 - name: circle2-exporter-service
   repository: file://../circle2_exporter_service
   version: 0.1.5
@@ -38,5 +38,5 @@ dependencies:
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:2d60ee5a43b1c8effef0426b0892ae02edb21de5ab0a2d363e5a5d214c9ee83c
-generated: "2021-01-19T10:45:51.9551987+01:00"
+digest: sha256:8b2b1a581c1be890f71124d307ac75dbc552b580c8969786c6f23067fbf3affd
+generated: "2021-01-19T10:48:58.9428752+01:00"
