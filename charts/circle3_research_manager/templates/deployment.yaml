@@ -29,9 +29,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: REDIS_HOST
-            value: {{ .Values.environment.REDIS_HOST | quote }}
+            value: {{ .Values.global.REDIS_HOST | quote }}
           - name: REDIS_PORT
-            value: {{ .Values.environment.REDIS_PORT | quote }}
+            value: {{ .Values.global.REDIS_PORT | quote }}
           envFrom:
           - configMapRef:
               name: proxy
