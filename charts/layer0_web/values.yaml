@@ -5,16 +5,16 @@
 replicaCount: 1
 
 image:
-  repository: zivgitlab.wwu.io/sciebo-rds/sciebo-rds/use_case_exporter
-  tag: 70530
+  repository: zivgitlab.wwu.io/sciebo-rds/RDS-Web
+  tag: latest
   pullPolicy: Always
 
 labels:
   app.kubernetes.io/component: research-data-services.org
-  app.kubernetes.io/part-of: service
-  research-data-services.org/layer: layer2
+  app.kubernetes.io/part-of: rds-ingress
+  research-data-services.org/layer: layer0
 
-fullnameOverride: circle2-exporter-service
+fullnameOverride: layer0-web
 
 service:
   type: ClusterIP
@@ -22,6 +22,11 @@ service:
   targetPort: 8080
   annotations:
     prometheus.io/scrape: "true"
+
+domain: localhost
+ingress:
+  tls:
+    secretName: sciebords-tls-public
 
 resources:
   {}
@@ -41,3 +46,16 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+environment:
+  RDS_INSTALLATION_DOMAIN: https://<your-rds-installation>
+  EMBED_MODE: true
+  FLASK_ORIGINS: '["http://localhost:8080", "http://localhost:8085", "http://localhost:8000", "http://localhost:9100", "https://<your-rds-installation>"]'
+  SECRET_KEY: 1234
+  OWNCLOUD_URL: http://localhost:8000
+  OWNCLOUD_OAUTH_CLIENT_ID: ABC
+  OWNCLOUD_OAUTH_CLIENT_SECRET: XYZ
+  OWNCLOUD_OAUTH_CLIENT_REDIRECT: https://<your-rds-installation>
+  OWNCLOUD_OAUTH_CLIENT_AUTHORIZE_URL: http://localhost:8000/apps/oauth2/authorize
+  DESCRIBO_API_ENDPOINT: http://localhost:9000/api/session/application
+  DESCRIBO_API_SECRET: IAMSECRET
