@@ -17,6 +17,9 @@ dependencies:
 - name: circle1-port-datasafe
   repository: file://../circle1_port_datasafe
   version: 0.2.0
+- name: circle1-helper-describo-token-updater
+  repository: file://../circle1_helper_describo_token_updater
+  version: 0.1.0
 - name: circle1-port-reva
   repository: file://../circle1_port_reva
   version: 0.1.3
@@ -41,5 +44,5 @@ dependencies:
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
-digest: sha256:936c92a72ddca8005b521a47ffd6ae00f0fd54008c4fb8d302174cd6be6da74a
-generated: "2021-07-22T16:39:47.8343668+02:00"
+digest: sha256:0bb140ffaebcdb44ea37256f017142167c1240c8edfb758eaabfac8fa4ae2674
+generated: "2021-07-26T17:08:01.8336479+02:00"

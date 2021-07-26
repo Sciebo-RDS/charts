@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "circle1_helper_describo_token_updater.fullname" . }}
+  labels:
+{{ include "circle1_helper_describo_token_updater.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+{{ include "circle1_helper_describo_token_updater.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+{{ include "circle1_helper_describo_token_updater.labels" . | indent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: "DESCRIBO_API_ENDPOINT"
+            value: "{{ .Values.environment.DESCRIBO_API_ENDPOINT }}"
+          envFrom:
+          - configMapRef:
+              name: mservice
+          - configMapRef:
+              name: proxy
+          - configMapRef:
+              name: globalenvvar
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
