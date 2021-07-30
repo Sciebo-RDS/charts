@@ -5,16 +5,31 @@
 replicaCount: 1
 
 image:
-  repository: zivgitlab.wwu.io/sciebo-rds/RDS-Web/rds_web
+  repository: zivgitlab.wwu.io/sciebo-rds/RDS-Web/
+  api: describo_online_api
+  ui: describo_online_ui
   tag: latest
   pullPolicy: Always
 
 labels:
   app.kubernetes.io/component: research-data-services.org
-  app.kubernetes.io/part-of: connector
+  app.kubernetes.io/part-of: service
   research-data-services.org/layer: layer1
 
-fullnameOverride: circle1-rds-webweb
+fullnameOverride: layer0-describo
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+  annotations:
+    prometheus.io/scrape: "true"
+
+domain: localhost
+ingress:
+  path: /describo/
+  tls:
+    secretName: sciebords-tls-public
 
 resources:
   {}
@@ -36,4 +51,5 @@ tolerations: []
 affinity: {}
 
 environment:
-  DESCRIBO_API_ENDPOINT: http://localhost:9000
+  CONFIG_FILE: "./describo/production-configuration.json"
+  NODE_ENV: "production" # need to be the same as the suffix of the previous given file. {development, production}

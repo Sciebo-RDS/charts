@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "layer0_describo.fullname" . }}
+  labels:
+{{ include "layer0_describo.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+{{ include "layer0_describo.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+{{ include "layer0_describo.labels" . | indent 8 }}
+    spec:
+      volumes:
+        - name: describo-configuration
+          configMap:
+            name: describo-configuration-file
+            items:
+            - key: "{{ .Values.environment.NODE_ENV }}-configuration.json"
+              path: "{{ .Values.environment.NODE_ENV }}-configuration.json"
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      containers:
+        - name: "api"
+          image: "{{ .Values.image.repository }}{{ .Values.image.api }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: describo-configuration
+              mountPath: "/srv/configuration/{{ .Values.environment.NODE_ENV }}-configuration.json"
+              subPath: "{{ .Values.environment.NODE_ENV }}-configuration.json"
+          envFrom:
+          - configMapRef:
+              name: mservice
+          - configMapRef:
+              name: proxy
+          - configMapRef:
+              name: globalenvvar
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+        - name: "ui"
+          image: "{{ .Values.image.repository }}{{ .Values.image.ui }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: "VUE_APP_BASE_URL"
+            value: "{{ .Values.ingress.path }}"
+          envFrom:
+          - configMapRef:
+              name: mservice
+          - configMapRef:
+              name: proxy
+          - configMapRef:
+              name: globalenvvar
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /metrics
+              port: http
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /metrics
+              port: http
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}

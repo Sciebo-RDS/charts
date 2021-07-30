@@ -6,6 +6,10 @@ global:
 feature:
   jaeger: true
   redis: true
+layer0-web:
+  enabled: false
+layer0-describo:
+  enabled: false
 circle1-port-zenodo:
   enabled: false
 circle1-port-owncloud:

@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "circle1_helper_describo_token_updater.fullname" . }}
+  name: {{ include "layer0_helper_describo_token_updater.fullname" . }}
   labels:
-{{ include "circle1_helper_describo_token_updater.labels" . | indent 4 }}
+{{ include "layer0_helper_describo_token_updater.labels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-{{ include "circle1_helper_describo_token_updater.labels" . | indent 6 }}
+{{ include "layer0_helper_describo_token_updater.labels" . | indent 6 }}
   template:
     metadata:
       labels:
-{{ include "circle1_helper_describo_token_updater.labels" . | indent 8 }}
+{{ include "layer0_helper_describo_token_updater.labels" . | indent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -25,6 +25,8 @@ spec:
           env:
           - name: "DESCRIBO_API_ENDPOINT"
             value: "{{ .Values.environment.DESCRIBO_API_ENDPOINT }}"
+          - name: "DESCRIBO_API_SECRET"
+            value: "{{ .Values.environment.DESCRIBO_API_SECRET }}"
           envFrom:
           - configMapRef:
               name: mservice

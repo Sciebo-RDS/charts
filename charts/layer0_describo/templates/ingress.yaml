@@ -1,10 +1,10 @@
-{{- $fullName := include "layer0_web.fullname" . -}}
+{{- $fullName := include "layer0_describo.fullname" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-{{ include "layer0_web.labels" . | indent 4 }}
+{{ include "layer0_describo.labels" . | indent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - {{ include "layer0_web.domain" . | quote }}
-      secretName: {{ include "layer0_web.secretName" . | quote }}
+        - {{ include "layer0_describo.domain" . | quote }}
+      secretName: {{ include "layer0_describo.secretName" . | quote }}
   rules:
-    - host: {{ include "layer0_web.domain" .  | quote }}
+    - host: {{ include "layer0_describo.domain" .  | quote }}
       http:
         paths:
           - path: {{ .Values.ingress.path }}

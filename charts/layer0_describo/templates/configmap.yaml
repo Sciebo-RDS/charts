@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: describo-configuration-file
+  labels:
+{{ include "layer0_describo.labels" . | indent 4 }}
+data:
+  "{{ .Values.environment.NODE_ENV }}-configuration.json": |-
+{{ .Files.Get .Values.environment.CONFIG_FILE | indent 4 }}

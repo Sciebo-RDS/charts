@@ -25,6 +25,7 @@ service:
 
 domain: localhost
 ingress:
+  path: /
   tls:
     secretName: sciebords-tls-public
 

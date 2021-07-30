@@ -1,8 +1,20 @@
 dependencies:
+  - name: layer0-describo
+    version: ^0.1.0
+    repository: file://../layer0_describo
+    condition: layer0-describo.enabled
+    tags:
+      - layer0
   - name: layer0-web
     version: ^0.1.0
     repository: file://../layer0_web
     condition: layer0-web.enabled
+    tags:
+      - layer0
+  - name: layer0-helper-describo-token-updater
+    version: ^0.1.0
+    repository: file://../layer0_helper_describo_token_updater
+    condition: circle1-helper-describo-token-updater.enabled
     tags:
       - layer0
   - name: circle1-port-openscienceframework
@@ -33,12 +45,6 @@ dependencies:
     version: ^0.2.0
     repository: file://../circle1_port_datasafe
     condition: circle1-port-datasafe.enabled
-    tags:
-      - circle1
-  - name: circle1-helper-describo-token-updater
-    version: ^0.1.0
-    repository: file://../circle1_helper_describo_token_updater
-    condition: circle1-helper-describo-token-updater.enabled
     tags:
       - circle1
   - name: circle1-port-reva
