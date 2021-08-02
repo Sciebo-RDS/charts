@@ -48,7 +48,5 @@ tolerations: []
 affinity: {}
 
 environment:
-  REDIS_HOST: redis
-  REDIS_PORT: 6379
   # disable IN Memory, when redis is not available. Service will be exited, when in memory not enabled.
-  IN_MEMORY_AS_FAILOVER: "False" 
+  IN_MEMORY_AS_FAILOVER: "False"

@@ -91,3 +91,10 @@ dependencies:
     condition: feature.redis
     tags:
       - storage
+  - name: redis
+    alias: redis-helper
+    version: ^14.8.7
+    repository: https://charts.bitnami.com/bitnami
+    condition: feature.redis
+    tags:
+      - storage

@@ -51,3 +51,24 @@ redis:
       repl-diskless-sync: "yes"
       rdbcompression: "yes"
       rdbchecksum: "yes"
+redis-helper:
+  ## All redis-cluster options: https://github.com/bitnami/charts/tree/master/bitnami/redis
+  fullnameOverride: redis-helper
+  usePassword: false
+  persistence:
+    enabled: true
+    accessModes:
+      - ReadWriteOnce
+    size: 1Gi
+    annotations: {}
+  redis:
+    config:
+      ## All redis options: http://download.redis.io/redis-stable/redis.conf
+      min-replicas-to-write: 1
+      min-replicas-max-lag: 5
+      maxmemory: "0"
+      maxmemory-policy: "volatile-lru"
+      save: "60 1"
+      repl-diskless-sync: "yes"
+      rdbcompression: "yes"
+      rdbchecksum: "yes"
