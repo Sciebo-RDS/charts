@@ -33,6 +33,17 @@ spec:
             - name: describo-configuration
               mountPath: "/srv/configuration/{{ .Values.environment.NODE_ENV }}-configuration.json"
               subPath: "{{ .Values.environment.NODE_ENV }}-configuration.json"
+          env:
+          - name: "DB_HOST"
+            value: "{{ .Values.environment.DB_HOST }}"
+          - name: "DB_PORT"
+            value: "{{ .Values.postgresql.service.port }}"
+          - name: "DB_USER"
+            value: "{{ .Values.postgresql.postgresqlUsername }}"
+          - name: "DB_PASSWORD"
+            value: "{{ .Values.postgresql.postgresqlPassword }}"
+          - name: "DB_DATABASE"
+            value: "{{ .Values.postgresql.postgresqlDatabase }}"
           envFrom:
           - configMapRef:
               name: mservice

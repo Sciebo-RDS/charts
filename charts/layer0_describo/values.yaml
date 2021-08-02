@@ -50,6 +50,25 @@ tolerations: []
 
 affinity: {}
 
+persistence:
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 1Gi
+  annotations: {}
+
 environment:
   CONFIG_FILE: "./describo/production-configuration.json"
   NODE_ENV: "production" # need to be the same as the suffix of the previous given file. {development, production}
+  DB_HOST: "postgresql"
+
+postgresql:
+  image:
+    tag: 10.8.0
+  service:
+    port: "5432"
+  fullnameOverride: postgresql
+  postgresqlDatabase: "describo"
+  postgresqlUsername: "admin"
+  postgresqlPassword: "admin"
+  postgresqlDataDir: /bitnami/data
