@@ -28,19 +28,19 @@ dependencies:
   version: 0.1.3
 - name: circle2-exporter-service
   repository: file://../circle2_exporter_service
-  version: 0.2.1
+  version: 0.2.0
 - name: circle2-port-service
   repository: file://../circle2_port_service
-  version: 0.2.1
+  version: 0.2.0
 - name: circle2-metadata-service
   repository: file://../circle2_metadata_service
-  version: 0.2.1
+  version: 0.2.0
 - name: circle3-token-storage
   repository: file://../circle3_token_storage
-  version: 0.2.5
+  version: 0.2.4
 - name: circle3-research-manager
   repository: file://../circle3_research_manager
-  version: 0.3.1
+  version: 0.3.0
 - name: jaeger
   repository: https://jaegertracing.github.io/helm-charts
   version: ^0.34.0
@@ -50,5 +50,5 @@ dependencies:
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: ^14.8.7
-digest: sha256:31bf68ccd5e8918c64ce0e6c3d40602c063ca9c364d0f2c5f6809ec94a068fe0
-generated: "2021-08-03T18:34:21.2651847+02:00"
+digest: sha256:956b7984be662c0fcfa0a7ee31425d7ac4f53678ecc215d7dd53204a0a354afe
+generated: "2021-08-03T18:28:43.2695422+02:00"
