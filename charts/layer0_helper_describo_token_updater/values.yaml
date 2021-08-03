@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: zivgitlab.wwu.io/sciebo-rds/RDS-Web/port_helper_describo_token_updater
+  repository: zivgitlab.wwu.io/sciebo-rds/rds-web/port_helper_describo_token_updater
   tag: latest
   pullPolicy: Always
 

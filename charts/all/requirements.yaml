@@ -14,7 +14,7 @@ dependencies:
   - name: layer0-helper-describo-token-updater
     version: ^0.1.0
     repository: file://../layer0_helper_describo_token_updater
-    condition: circle1-helper-describo-token-updater.enabled
+    condition: feature.redis
     tags:
       - layer0
   - name: circle1-port-openscienceframework

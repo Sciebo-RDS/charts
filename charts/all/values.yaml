@@ -14,6 +14,8 @@ layer0-web:
   enabled: false
 layer0-describo:
   enabled: false
+layer0-helper-describo-token-updater:
+  enabled: false
 circle1-port-zenodo:
   enabled: false
 circle1-port-owncloud:

@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: zivgitlab.wwu.io/sciebo-rds/RDS-Web/
+  repository: zivgitlab.wwu.io/sciebo-rds/rds-web/
   api: describo_online_api
   ui: describo_online_ui
   tag: latest

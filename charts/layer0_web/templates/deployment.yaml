@@ -23,8 +23,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-          - name: "RDS_INSTALLATION_DOMAIN"
-            value: "{{ .Values.environment.RDS_INSTALLATION_DOMAIN }}"
           - name: "EMBED_MODE"
             value: "{{ .Values.environment.EMBED_MODE }}"
           - name: "FLASK_ORIGINS"
@@ -45,6 +43,18 @@ spec:
             value: "{{ .Values.environment.DESCRIBO_API_ENDPOINT }}"
           - name: "DESCRIBO_API_SECRET"
             value: "{{ .Values.environment.DESCRIBO_API_SECRET }}"
+          - name: "VUE_APP_DESCRIBO_URL"
+            value: "{{ .Values.environment.VUE_APP_DESCRIBO_URL }}"
+          - name: "VUE_APP_FRONTENDHOST"
+            value: "{{ .Values.environment.VUE_APP_FRONTENDHOST }}"
+          - name: "VUE_APP_SOCKETIO_HOST"
+            value: "{{ .Values.environment.VUE_APP_SOCKETIO_HOST }}"
+          - name: "VUE_APP_BASE_URL"
+            value: "{{ .Values.environment.VUE_APP_BASE_URL }}"
+          - name: "SOCKETIO_HOST"
+            value: "{{ .Values.environment.SOCKETIO_HOST }}"
+          - name: "SOCKETIO_PATH"
+            value: "{{ .Values.environment.SOCKETIO_PATH }}"
           - name: "VUE_APP_BASE_URL"
             value: "{{ .Values.ingress.path }}"
           envFrom:
