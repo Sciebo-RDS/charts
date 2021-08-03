@@ -1,5 +1,5 @@
 dependencies:
-- name: layer0-describo
+- name: layer0-describo-online
   repository: file://../layer0_describo
   version: 0.1.0
 - name: layer0-web
@@ -50,5 +50,5 @@ dependencies:
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: ^14.8.7
-digest: sha256:e8fbf118761e871a3ef2d8669e7f790ae2f1b2925c75baebb61e867df283bedd
-generated: "2021-08-02T10:20:48.6135458+02:00"
+digest: sha256:6c468c55704298b2bebe8bf9a1e576505a6eaebfc11563b0c155e1be570491c4
+generated: "2021-08-03T10:10:40.8399596+02:00"
