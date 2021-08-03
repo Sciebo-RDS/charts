@@ -3,6 +3,10 @@ global:
   ingress:
     tls:
       secretName: sciebords-tls-public
+  REDIS_HOST: redis
+  REDIS_PORT: 6379
+  REDIS_HELPER_HOST: redis-helper
+  REDIS_HELPER_PORT: 6379
 feature:
   jaeger: true
   redis: true
