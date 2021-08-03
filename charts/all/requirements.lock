@@ -10,37 +10,37 @@ dependencies:
   version: 0.1.3
 - name: circle1-port-openscienceframework
   repository: file://../circle1_port_openscienceframework
-  version: 0.2.0
+  version: 0.2.2
 - name: circle1-port-zenodo
   repository: file://../circle1_port_zenodo
-  version: 0.2.0
+  version: 0.2.2
 - name: circle1-port-owncloud
   repository: file://../circle1_port_owncloud
-  version: 0.2.0
+  version: 0.2.2
 - name: circle1-port-openscienceframework
   repository: file://../circle1_port_openscienceframework
-  version: 0.2.0
+  version: 0.2.2
 - name: circle1-port-datasafe
   repository: file://../circle1_port_datasafe
-  version: 0.2.0
+  version: 0.2.2
 - name: circle1-port-reva
   repository: file://../circle1_port_reva
-  version: 0.1.3
+  version: 0.1.5
 - name: circle2-exporter-service
   repository: file://../circle2_exporter_service
-  version: 0.2.0
+  version: 0.2.2
 - name: circle2-port-service
   repository: file://../circle2_port_service
-  version: 0.2.0
+  version: 0.2.2
 - name: circle2-metadata-service
   repository: file://../circle2_metadata_service
-  version: 0.2.0
+  version: 0.2.2
 - name: circle3-token-storage
   repository: file://../circle3_token_storage
-  version: 0.2.4
+  version: 0.2.6
 - name: circle3-research-manager
   repository: file://../circle3_research_manager
-  version: 0.3.0
+  version: 0.3.2
 - name: jaeger
   repository: https://jaegertracing.github.io/helm-charts
   version: ^0.34.0
@@ -50,5 +50,5 @@ dependencies:
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: ^14.8.7
-digest: sha256:956b7984be662c0fcfa0a7ee31425d7ac4f53678ecc215d7dd53204a0a354afe
-generated: "2021-08-03T18:28:43.2695422+02:00"
+digest: sha256:cd7e3a81faae82a336f9a79b6de9076cadeac8c2b69b90800cd8f19ff199dbcb
+generated: "2021-08-03T18:55:13.9825635+02:00"
