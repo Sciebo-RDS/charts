@@ -8,3 +8,4 @@ data:
 {{- range $key, $val := .Values.environment.CONFIG_FILE }}
   {{ $key }}: |-
 {{ $val | indent 4}}
+{{- end }}
