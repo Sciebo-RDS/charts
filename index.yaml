@@ -3,6 +3,127 @@ entries:
   all:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-08-04T16:26:59.552507405Z"
+    dependencies:
+    - condition: layer0-describo.enabled
+      name: layer0-describo
+      repository: file://../layer0_describo
+      tags:
+      - layer0
+      version: ^0.1.0
+    - condition: layer0-describo.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^10.8.0
+    - condition: layer0-web.enabled
+      name: layer0-web
+      repository: file://../layer0_web
+      tags:
+      - layer0
+      version: ^0.1.0
+    - condition: feature.redis
+      name: layer0-helper-describo-token-updater
+      repository: file://../layer0_helper_describo_token_updater
+      tags:
+      - layer0
+      version: ^0.1.0
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-openscienceframework
+      repository: file://../circle1_port_openscienceframework
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-zenodo
+      repository: file://../circle1_port_zenodo
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-owncloud.enabled
+      name: circle1-port-owncloud
+      repository: file://../circle1_port_owncloud
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-datasafe.enabled
+      name: circle1-port-datasafe
+      repository: file://../circle1_port_datasafe
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-reva.enabled
+      name: circle1-port-reva
+      repository: file://../circle1_port_reva
+      tags:
+      - circle1
+      version: ^0.1.0
+    - name: circle2-exporter-service
+      repository: file://../circle2_exporter_service
+      tags:
+      - circle2
+      version: ^0.2.0
+    - name: circle2-port-service
+      repository: file://../circle2_port_service
+      tags:
+      - circle2
+      version: ^0.2.0
+    - name: circle2-metadata-service
+      repository: file://../circle2_metadata_service
+      tags:
+      - circle2
+      version: ^0.2.0
+    - name: circle3-token-storage
+      repository: file://../circle3_token_storage
+      tags:
+      - circle3
+      version: ^0.2.0
+    - name: circle3-research-manager
+      repository: file://../circle3_research_manager
+      tags:
+      - circle3
+      version: ^0.3.0
+    - condition: feature.jaeger
+      name: jaeger
+      repository: https://jaegertracing.github.io/helm-charts
+      tags:
+      - monitoring
+      version: ^0.34.0
+    - alias: redis
+      condition: feature.redis
+      name: redis-cluster
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^3.2.0
+    - alias: redis-helper
+      condition: feature.redis
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^14.8.7
+    description: A single chart for installing whole sciebo rds ecosystem.
+    digest: 391f97dbb3ce7d56a4fe71ff7d7c8bbb087bec29118d82b128ad5973739ddb6e
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: all
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/all-0.5.19/all-0.5.19.tgz
+    version: 0.5.19
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-08-04T16:08:26.655423091Z"
     dependencies:
     - condition: layer0-describo.enabled
@@ -3450,6 +3571,27 @@ entries:
   circle1-port-openscienceframework:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-08-04T16:26:59.681895509Z"
+    description: A Helm chart for Kubernetes
+    digest: 18c15bffda7afed17c0be3e7857ad0ef8aebd0567add5f1b68d2bb44e320eb0c
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - openscienceframework
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: circle1-port-openscienceframework
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/circle1-port-openscienceframework-0.2.3/circle1-port-openscienceframework-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-08-03T16:56:48.568057702Z"
     description: A Helm chart for Kubernetes
     digest: b8c3b94ae6499d614be8b4df28c791e51c8345a65388f9f5b03958393661ceca
@@ -4896,6 +5038,33 @@ entries:
     - https://github.com/Sciebo-RDS/charts/releases/download/dev-0.2.1/dev-0.2.1.tgz
     version: 0.2.1
   layer0-describo:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-08-04T16:26:59.790341923Z"
+    dependencies:
+    - name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^10.8.0
+    description: A Helm chart for Kubernetes
+    digest: 9ce95b3a8729728dd708d92cb94b76f46bd83922e42467103440000d7465b169
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - describo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: layer0-describo
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/layer0-describo-0.1.11/layer0-describo-0.1.11.tgz
+    version: 0.1.11
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-08-04T16:08:26.819520351Z"
