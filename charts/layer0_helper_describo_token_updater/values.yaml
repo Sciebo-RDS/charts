@@ -14,7 +14,7 @@ labels:
   app.kubernetes.io/part-of: service
   research-data-services.org/layer: layer0
 
-fullnameOverride: layer0-token-updater
+fullnameOverride: layer0-helper-describo-token-updater
 
 resources:
   {}
