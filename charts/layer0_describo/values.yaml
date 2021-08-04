@@ -58,7 +58,8 @@ persistence:
   annotations: {}
 
 environment:
-  CONFIG_FILE: "./describo/production-configuration.json"
+  CONFIG_FILE:
+    production-configuration.json: ""
   NODE_ENV: "production" # need to be the same as the suffix of the previous given file. {development, production}
   DB_HOST: "postgresql"
   DB_PORT: "5432"
