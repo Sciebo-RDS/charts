@@ -68,12 +68,12 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /metrics
+              path: /
               port: http
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /metrics
+              path: /
               port: http
             periodSeconds: 10
           resources:
