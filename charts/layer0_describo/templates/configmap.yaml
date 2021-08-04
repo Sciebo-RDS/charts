@@ -5,7 +5,5 @@ metadata:
   labels:
 {{ include "layer0_describo.labels" . | indent 4 }}
 data:
-{{- range $key, $val := .Values.environment.CONFIG_FILE }}
-  {{ $key }}: |-
-{{ $val | indent 4}}
-{{- end }}
+  "configuration.json": |-
+{{ .Files.Get .Values.environment.CONFIG_FILE | indent 4 }}

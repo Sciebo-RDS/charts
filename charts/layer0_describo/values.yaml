@@ -58,9 +58,7 @@ persistence:
   annotations: {}
 
 environment:
-  CONFIG_FILE:
-    production-configuration.json: ""
-  NODE_ENV: "production" # need to be the same as the suffix of the previous given file. {development, production}
+  CONFIG_FILE: ""
   DB_HOST: "postgresql"
   DB_PORT: "5432"
   DB_DATABASE: "describo"

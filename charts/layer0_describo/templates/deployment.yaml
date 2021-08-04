@@ -31,8 +31,8 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - name: describo-configuration
-              mountPath: "/srv/configuration/{{ .Values.environment.NODE_ENV }}-configuration.json"
-              subPath: "{{ .Values.environment.NODE_ENV }}-configuration.json"
+              mountPath: "/configuration/configuration.json"
+              subPath: "configuration.json"
           env:
           - name: "DB_HOST"
             value: "{{ .Values.environment.DB_HOST }}"
@@ -45,7 +45,7 @@ spec:
           - name: "DB_DATABASE"
             value: "{{ .Values.environment.DB_DATABASE }}"
           - name: "NODE_ENV"
-            value: "{{ .Values.environment.NODE_ENV }}"
+            value: "production"
           envFrom:
           - configMapRef:
               name: mservice
