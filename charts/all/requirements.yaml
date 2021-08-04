@@ -1,5 +1,5 @@
 dependencies:
-  - name: layer0-describo-online
+  - name: layer0-describo
     version: ^0.1.0
     repository: file://../layer0_describo
     condition: layer0-describo.enabled
