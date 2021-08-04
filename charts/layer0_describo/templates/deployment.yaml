@@ -19,8 +19,8 @@ spec:
           configMap:
             name: describo-configuration-file
             items:
-            - key: "{{ .Values.environment.NODE_ENV }}-configuration.json"
-              path: "{{ .Values.environment.NODE_ENV }}-configuration.json"
+            - key: "configuration.json"
+              path: "configuration.json"
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
