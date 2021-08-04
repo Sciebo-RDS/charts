@@ -78,3 +78,13 @@ redis-helper:
       repl-diskless-sync: "yes"
       rdbcompression: "yes"
       rdbchecksum: "yes"
+postgresql:
+  image:
+    tag: 10.8.0
+  service:
+    port: "5432"
+  fullnameOverride: postgresql
+  postgresqlDatabase: "describo"
+  postgresqlUsername: "admin"
+  postgresqlPassword: "admin"
+  postgresqlDataDir: /bitnami/data
