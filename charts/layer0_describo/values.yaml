@@ -61,6 +61,10 @@ environment:
   CONFIG_FILE: "./describo/production-configuration.json"
   NODE_ENV: "production" # need to be the same as the suffix of the previous given file. {development, production}
   DB_HOST: "postgresql"
+  DB_PORT: "5432"
+  DB_DATABASE: "describo"
+  DB_USER: "admin"
+  DB_PASSWORD: "admin"
 
 postgresql:
   image:

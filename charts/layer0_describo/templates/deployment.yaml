@@ -37,13 +37,13 @@ spec:
           - name: "DB_HOST"
             value: "{{ .Values.environment.DB_HOST }}"
           - name: "DB_PORT"
-            value: "{{ .Values.postgresql.service.port }}"
+            value: "{{ .Values.environment.DB_PORT }}"
           - name: "DB_USER"
-            value: "{{ .Values.postgresql.postgresqlUsername }}"
+            value: "{{ .Values.environment.DB_USER }}"
           - name: "DB_PASSWORD"
-            value: "{{ .Values.postgresql.postgresqlPassword }}"
+            value: "{{ .Values.environment.DB_PASSWORD }}"
           - name: "DB_DATABASE"
-            value: "{{ .Values.postgresql.postgresqlDatabase }}"
+            value: "{{ .Values.environment.DB_DATABASE }}"
           envFrom:
           - configMapRef:
               name: mservice
