@@ -44,6 +44,8 @@ spec:
             value: "{{ .Values.environment.DB_PASSWORD }}"
           - name: "DB_DATABASE"
             value: "{{ .Values.environment.DB_DATABASE }}"
+          - name: "NODE_ENV"
+            value: "{{ .Values.environment.NODE_ENV }}"
           envFrom:
           - configMapRef:
               name: mservice
@@ -59,6 +61,8 @@ spec:
           env:
           - name: "VUE_APP_BASE_URL"
             value: "{{ .Values.ingress.path }}"
+          - name: "NODE_ENV"
+            value: "{{ .Values.environment.NODE_ENV }}"
           envFrom:
           - configMapRef:
               name: mservice
