@@ -4,7 +4,7 @@ dependencies:
   version: 0.1.1
 - name: layer0-web
   repository: file://../layer0_web
-  version: 0.1.2
+  version: 0.1.4
 - name: layer0-helper-describo-token-updater
   repository: file://../layer0_helper_describo_token_updater
   version: 0.1.4
@@ -43,12 +43,12 @@ dependencies:
   version: 0.3.2
 - name: jaeger
   repository: https://jaegertracing.github.io/helm-charts
-  version: ^0.34.0
+  version: 0.34.1
 - name: redis-cluster
   repository: https://charts.bitnami.com/bitnami
   version: ^3.2.0
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: ^14.8.7
-digest: sha256:acf5cd7362b18f07f67724cc925f39252e0b04ada5b47e31ade0b418bcadcb32
-generated: "2021-08-04T11:21:54.8843724+02:00"
+digest: sha256:4edd687ac4bdbdd8606d2cf9989e71a5e49c52bbd1361f122cf8c4329fc587ed
+generated: "2021-08-04T11:40:41.3535252+02:00"

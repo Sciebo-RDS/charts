@@ -26,7 +26,7 @@ spec:
           - name: "EMBED_MODE"
             value: "{{ .Values.environment.EMBED_MODE }}"
           - name: "FLASK_ORIGINS"
-            value: {{ .Values.environment.FLASK_ORIGINS | toJson }}
+            value: {{ .Values.environment.FLASK_ORIGINS | toJson | squote }}
           - name: "SECRET_KEY"
             value: "{{ .Values.environment.SECRET_KEY }}"
           - name: "OWNCLOUD_URL"
