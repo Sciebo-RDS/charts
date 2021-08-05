@@ -19,8 +19,12 @@ spec:
           configMap:
             name: describo-configuration-file
             items:
-            - key: "configuration.json"
-              path: "configuration.json"
+            - key: configuration.json
+              path: configuration.json
+            - key: type-definitions-lookup.json
+              path: type-definitions-lookup.json
+            - key: type-definitions.json
+              path: type-definitions.json
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -31,8 +35,14 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - name: describo-configuration
-              mountPath: "/configuration/configuration.json"
-              subPath: "configuration.json"
+              mountPath: /configuration/configuration.json
+              subPath: configuration.json
+            - name: describo-configuration
+              mountPath: /srv/type-definitions-lookup.json
+              subPath: type-definitions-lookup.json
+            - name: describo-configuration
+              mountPath: /srv/type-definitions.json
+              subPath: type-definitions.json
           env:
           - name: "DB_HOST"
             value: "{{ .Values.environment.DB_HOST }}"
