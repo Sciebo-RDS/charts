@@ -25,6 +25,8 @@ spec:
               path: type-definitions-lookup.json
             - key: type-definitions.json
               path: type-definitions.json
+            - key: nginx.conf
+              path: nginx.conf
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
