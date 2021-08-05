@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - name: describo-configuration
-              mountPath: /configuration/configuration.json
+              mountPath: /srv/configuration/configuration.json
               subPath: configuration.json
             - name: describo-configuration
               mountPath: /srv/type-definitions-lookup.json
