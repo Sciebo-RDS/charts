@@ -19,7 +19,7 @@ fullnameOverride: layer0-web
 service:
   type: ClusterIP
   port: 80
-  targetPort: 5000
+  targetPort: 80
   annotations:
     prometheus.io/scrape: "true"
 
@@ -28,7 +28,6 @@ ingress:
   path: /
   tls:
     secretName: sciebords-tls-public
-
 resources:
   {}
   # We usually recommend not to specify default resources and to leave this as a conscious
