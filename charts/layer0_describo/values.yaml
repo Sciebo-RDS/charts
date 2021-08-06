@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: zivgitlab.wwu.io/sciebo-rds/rds-web/
-  api: describo_online_api
-  ui: describo_online_ui
-  tag: latest
+  repository: arkisto/
+  api: describo-online-api
+  ui: describo-online-ui
+  tag: 0.3.0
   pullPolicy: Always
 
 labels:
