@@ -14,7 +14,7 @@ image:
 labels:
   app.kubernetes.io/component: research-data-services.org
   app.kubernetes.io/part-of: service
-  research-data-services.org/layer: layer1
+  research-data-services.org/layer: layer0
 
 fullnameOverride: layer0-describo
 
