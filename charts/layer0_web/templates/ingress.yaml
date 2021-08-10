@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - {{ include "layer0_web.domain" . | quote }}
+        - {{ .Values.domain }}
       secretName: {{ include "layer0_web.secretName" . | quote }}
   rules:
-    - host: {{ include "layer0_web.domain" .  | quote }}
+    - host: {{ .Values.domain }}
       http:
         paths:
           - path: {{ .Values.ingress.path }}
