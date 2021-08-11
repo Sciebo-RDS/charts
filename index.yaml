@@ -3,6 +3,127 @@ entries:
   all:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-08-11T09:30:36.094805798Z"
+    dependencies:
+    - condition: layer0-describo.enabled
+      name: layer0-describo
+      repository: file://../layer0_describo
+      tags:
+      - layer0
+      version: ^0.1.0
+    - condition: layer0-describo.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^10.8.0
+    - condition: layer0-web.enabled
+      name: layer0-web
+      repository: file://../layer0_web
+      tags:
+      - layer0
+      version: ^0.1.0
+    - condition: feature.redis
+      name: layer0-helper-describo-token-updater
+      repository: file://../layer0_helper_describo_token_updater
+      tags:
+      - layer0
+      version: ^0.1.0
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-openscienceframework
+      repository: file://../circle1_port_openscienceframework
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-zenodo.enabled
+      name: circle1-port-zenodo
+      repository: file://../circle1_port_zenodo
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-owncloud.enabled
+      name: circle1-port-owncloud
+      repository: file://../circle1_port_owncloud
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-datasafe.enabled
+      name: circle1-port-datasafe
+      repository: file://../circle1_port_datasafe
+      tags:
+      - circle1
+      version: ^0.2.0
+    - condition: circle1-port-reva.enabled
+      name: circle1-port-reva
+      repository: file://../circle1_port_reva
+      tags:
+      - circle1
+      version: ^0.1.0
+    - name: circle2-exporter-service
+      repository: file://../circle2_exporter_service
+      tags:
+      - circle2
+      version: ^0.2.0
+    - name: circle2-port-service
+      repository: file://../circle2_port_service
+      tags:
+      - circle2
+      version: ^0.2.0
+    - name: circle2-metadata-service
+      repository: file://../circle2_metadata_service
+      tags:
+      - circle2
+      version: ^0.2.0
+    - name: circle3-token-storage
+      repository: file://../circle3_token_storage
+      tags:
+      - circle3
+      version: ^0.2.0
+    - name: circle3-research-manager
+      repository: file://../circle3_research_manager
+      tags:
+      - circle3
+      version: ^0.3.0
+    - condition: feature.jaeger
+      name: jaeger
+      repository: https://jaegertracing.github.io/helm-charts
+      tags:
+      - monitoring
+      version: ^0.34.0
+    - alias: redis
+      condition: feature.redis
+      name: redis-cluster
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^3.2.0
+    - alias: redis-helper
+      condition: feature.redis
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - storage
+      version: ^14.8.7
+    description: A single chart for installing whole sciebo rds ecosystem.
+    digest: d58dfb674b9656805b92d459c10f6e69a8f998daa00718e75f49b80920b6da26
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    - zenodo
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: all
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/all-0.5.36/all-0.5.36.tgz
+    version: 0.5.36
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-08-10T09:42:27.724550083Z"
     dependencies:
     - condition: layer0-describo.enabled
@@ -7253,6 +7374,26 @@ entries:
     - https://github.com/Sciebo-RDS/charts/releases/download/layer0-helper-describo-token-updater-0.1.2/layer0-helper-describo-token-updater-0.1.2.tgz
     version: 0.1.2
   layer0-web:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-08-11T09:30:36.197971995Z"
+    description: A Helm chart for Kubernetes
+    digest: eb0f2a8ecbc700b42ea340cd7bb6d045b54d125e62b8830b7fe11c423d132dbf
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: layer0-web
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/layer0-web-0.1.15/layer0-web-0.1.15.tgz
+    version: 0.1.15
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-08-10T09:42:27.984929742Z"
