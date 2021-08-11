@@ -13,7 +13,7 @@ spec:
   tls:
     - hosts:
         - {{ .Values.domain }}
-      secretName: {{ include "layer0_web.secretName" . | quote }}
+      secretName: {{ .Values.global.ingress.tls.secretName | default .Values.ingress.tls.secretName | quote }}
   rules:
     - host: {{ .Values.domain }}
       http:

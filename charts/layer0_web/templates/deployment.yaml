@@ -55,9 +55,9 @@ spec:
             value: "{{ .Values.environment.SOCKETIO_PATH }}"
           - name: "VUE_APP_BASE_URL"
             value: "{{ .Values.environment.VUE_APP_BASE_URL }}"
-          - name: REDIS_HELPER_HOST
+          - name: "REDIS_HELPER_HOST"
             value: {{ .Values.global.REDIS_HELPER_HOST | quote }}
-          - name: REDIS_HELPER_PORT
+          - name: "REDIS_HELPER_PORT"
             value: {{ .Values.global.REDIS_HELPER_PORT | quote }}
           envFrom:
           - configMapRef:

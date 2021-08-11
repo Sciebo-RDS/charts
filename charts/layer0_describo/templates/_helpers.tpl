@@ -54,11 +54,3 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- .Values.domain  }}
 {{- else }}localhost{{- end -}}
 {{- end -}}
-
-{{- define "layer0_describo.secretName" -}}
-{{- if .Values.global }}
-{{- .Values.global.ingress.tls.secretName }}
-{{- else }}
-{{- .Values.ingress.tls.secretName }}
-{{- end -}}
-{{- end -}}
