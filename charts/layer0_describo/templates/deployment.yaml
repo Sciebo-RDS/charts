@@ -50,17 +50,19 @@ spec:
               readOnly: true
           env:
           - name: "DB_HOST"
-            value: "{{ .Values.environment.DB_HOST }}"
+            value: {{ .Values.environment.DB_HOST | quote }}
           - name: "DB_PORT"
-            value: "{{ .Values.environment.DB_PORT }}"
+            value: {{ .Values.environment.DB_PORT | quote }}
           - name: "DB_USER"
-            value: "{{ .Values.environment.DB_USER }}"
+            value: {{ .Values.environment.DB_USER | quote }}
           - name: "DB_PASSWORD"
-            value: "{{ .Values.environment.DB_PASSWORD }}"
+            value: {{ .Values.environment.DB_PASSWORD | quote }}
           - name: "DB_DATABASE"
-            value: "{{ .Values.environment.DB_DATABASE }}"
+            value: {{ .Values.environment.DB_DATABASE | quote }}
           - name: "NODE_ENV"
             value: "production"
+          - name: "LOG_LEVEL"
+            value: {{ .Values.environment.LOG_LEVEL | quote}}
           envFrom:
           - configMapRef:
               name: mservice
