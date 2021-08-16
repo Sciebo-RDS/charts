@@ -59,6 +59,10 @@ spec:
             value: {{ .Values.global.REDIS_HELPER_HOST | quote }}
           - name: "REDIS_HELPER_PORT"
             value: {{ .Values.global.REDIS_HELPER_PORT | quote }}
+          - name: REDIS_HOST
+            value: {{ .Values.global.REDIS_HOST | quote }}
+          - name: REDIS_PORT
+            value: {{ .Values.global.REDIS_PORT | quote }}
           envFrom:
           - configMapRef:
               name: mservice
