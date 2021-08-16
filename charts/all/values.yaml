@@ -7,6 +7,7 @@ global:
   REDIS_PORT: 6379
   REDIS_HELPER_HOST: redis-helper
   REDIS_HELPER_PORT: 6379
+  REDIS_CHANNEL: TokenStorage_Refresh_Token
 feature:
   jaeger: true
   redis: true

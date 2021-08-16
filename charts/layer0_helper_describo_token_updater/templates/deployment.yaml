@@ -28,9 +28,11 @@ spec:
           - name: REDIS_HELPER_PORT
             value: {{ .Values.global.REDIS_HELPER_PORT | quote }}
           - name: "DESCRIBO_API_ENDPOINT"
-            value: "{{ .Values.environment.DESCRIBO_API_ENDPOINT }}"
+            value: {{ .Values.environment.DESCRIBO_API_ENDPOINT | quote }}
           - name: "DESCRIBO_API_SECRET"
-            value: "{{ .Values.environment.DESCRIBO_API_SECRET }}"
+            value: {{ .Values.environment.DESCRIBO_API_SECRET | quote }}
+          - name: REDIS_CHANNEL
+            value: {{ .Values.global.REDIS_CHANNEL | quote }}
           envFrom:
           - configMapRef:
               name: mservice

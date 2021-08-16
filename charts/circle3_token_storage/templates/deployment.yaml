@@ -38,6 +38,8 @@ spec:
             value: {{ .Values.global.REDIS_HELPER_PORT | quote }}
           - name: use_inmemory_as_fallover
             value: {{ .Values.environment.IN_MEMORY_AS_FAILOVER | quote }}
+          - name: REDIS_CHANNEL
+            value: {{ .Values.global.REDIS_CHANNEL | quote }}
           envFrom:
           - configMapRef:
               name: proxy

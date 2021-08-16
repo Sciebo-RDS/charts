@@ -50,3 +50,4 @@ affinity: {}
 environment:
   # disable IN Memory, when redis is not available. Service will be exited, when in memory not enabled.
   IN_MEMORY_AS_FAILOVER: "False"
+  REDIS_CHANNEL: "TokenStorage_Refresh_Token"
