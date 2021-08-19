@@ -15,6 +15,10 @@ spec:
       targetPort: http
       protocol: TCP
       name: http
+    - port: 9999
+      targetPort: metrics
+      protocol: TCP
+      name: metrics
   selector:
     app.kubernetes.io/name: {{ include "layer0_web.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
