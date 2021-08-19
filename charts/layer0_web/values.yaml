@@ -22,7 +22,7 @@ service:
   targetPort: 80
   annotations:
     prometheus.io/scrape: "true"
-
+    prometheus.io/port: "9999"
 domain: localhost
 ingress:
   path: /
