@@ -22,7 +22,9 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
+          env:
+          - name: "IGNORE_PROJECTS"
+            value: {{ .Values.environment.IGNORE_PROJECTS | quote }}
           envFrom:
           - configMapRef:
               name: mservice
