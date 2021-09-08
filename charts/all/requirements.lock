@@ -4,7 +4,7 @@ dependencies:
   version: 0.1.27
 - name: postgresql
   repository: https://charts.bitnami.com/bitnami
-  version: 10.9.4
+  version: 10.9.5
 - name: layer0-web
   repository: file://../layer0_web
   version: 0.1.23
@@ -31,7 +31,7 @@ dependencies:
   version: 0.2.2
 - name: circle2-port-service
   repository: file://../circle2_port_service
-  version: 0.2.3
+  version: 0.2.4
 - name: circle2-metadata-service
   repository: file://../circle2_metadata_service
   version: 0.2.2
@@ -50,5 +50,5 @@ dependencies:
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: 14.8.11
-digest: sha256:110a74cea397c8814832aca67d74fcd8b2698c8fde33b3a2f58007a9ea2ef650
-generated: "2021-09-07T19:02:21.1925583+02:00"
+digest: sha256:fc44bb76bc6caa2ad809b7b1c084bff4c6b93c42fbd4619bee68f13e397d4ef6
+generated: "2021-09-08T09:57:18.4335575+02:00"
