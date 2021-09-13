@@ -8854,6 +8854,26 @@ entries:
   layer0-web:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-09-13T08:22:15.979378226Z"
+    description: A Helm chart for Kubernetes
+    digest: 41e79e6d259dcb78f663e8d6163e75dc7268a35a8d5f555bfc57c269ba4c7827
+    home: https://www.research-data-services.org/
+    icon: https://www.research-data-services.org/img/sciebo.png
+    keywords:
+    - research
+    - data
+    - services
+    maintainers:
+    - email: peter.heiss@uni-muenster.de
+      name: Heiss
+    name: layer0-web
+    sources:
+    - https://www.research-data-services.org/
+    urls:
+    - https://github.com/Sciebo-RDS/charts/releases/download/layer0-web-0.1.24/layer0-web-0.1.24.tgz
+    version: 0.1.24
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-08-19T09:02:01.917068215Z"
     description: A Helm chart for Kubernetes
     digest: ff2f950259a5e3add161122c6257683ed2159eeed7212c77cf0d4994c0f6b52e
