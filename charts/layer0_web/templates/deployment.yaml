@@ -77,7 +77,7 @@ spec:
           livenessProbe:
             httpGet:
               path: /metrics
-              port: http
+              port: metrics
             periodSeconds: 10
           readinessProbe:
             httpGet:
