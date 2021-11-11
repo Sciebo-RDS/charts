@@ -7,7 +7,7 @@ dependencies:
   version: 10.13.7
 - name: layer0-web
   repository: file://../layer0_web
-  version: 0.1.29
+  version: 0.1.28
 - name: layer0-helper-describo-token-updater
   repository: file://../layer0_helper_describo_token_updater
   version: 0.1.5
@@ -50,5 +50,5 @@ dependencies:
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: 14.8.11
-digest: sha256:7cfc273943b205b6cc497b39458d324f101a7efc9581125bc082bec965bd9aea
-generated: "2021-11-10T12:41:51.8554311+01:00"
+digest: sha256:4f7d344530beb5d9e2e638f987f26fbb1426432b8641817ff6d54b5aaddda1c7
+generated: "2021-11-10T12:11:05.080807+01:00"
