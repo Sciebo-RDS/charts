@@ -12,9 +12,9 @@ feature:
   jaeger: true
   redis: true
 layer0-web:
-  enabled: true
+  enabled: false
 layer0-describo:
-  enabled: true
+  enabled: false
 layer0-helper-describo-token-updater:
   enabled: false
 circle1-port-zenodo:
