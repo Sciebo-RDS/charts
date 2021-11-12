@@ -3,7 +3,7 @@ kind: Service
 metadata:
   {{- with .Values.service.annotations }}
   annotations:
-  {{ toYaml . | indent 4 }}
+{{ toYaml . | indent 4 }}
   {{- end }}
   name: {{ include "layer0_web.fullname" . }}
   labels:

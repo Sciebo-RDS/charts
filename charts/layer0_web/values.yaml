@@ -16,6 +16,12 @@ labels:
 
 fullnameOverride: layer0-web
 
+global:
+  domain: localhost
+  ingress:
+    tls:
+      secretName: sciebords-tls-public
+
 service:
   type: ClusterIP
   port: 80
