@@ -27,11 +27,11 @@ feature:
   jaeger: true
   redis: true
 layer0-web:
-  enabled: false
+  enabled: true
 layer0-describo:
-  enabled: false
+  enabled: true
 layer0-helper-describo-token-updater:
-  enabled: false
+  enabled: true
 circle1-port-zenodo:
   enabled: false
 circle1-port-owncloud:
