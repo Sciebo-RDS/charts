@@ -32,6 +32,41 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{/*
+Return the proper describo image name
+*/}}
+{{- define "image" -}}
+{{- $registryName := .imageRoot.registry -}}
+{{- $repositoryName := .imageRoot.repository -}}
+{{- if .repository -}}
+{{- $repositoryName = .repository -}}
+{{- end -}}
+{{- $tag := .imageRoot.tag | toString -}}
+{{- if .global }}
+    {{- if .global.image }}
+        {{- if .global.image.registry }}    
+            {{- $registryName = .global.image.registry -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- if $registryName }}
+{{- printf "%s/%s:%s" $registryName $repositoryName $tag -}}
+{{- else -}}
+{{- printf "%s:%s" $repositoryName $tag -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the proper describo image name
+*/}}
+{{- define "layer0_describo.apiImage" -}}
+{{- include "image" (dict "imageRoot" .Values.image "global" .Values.global "repository" .Values.image.apiRepository) -}}
+{{- end -}}
+
+{{- define "layer0_describo.uiImage" -}}
+{{ include "image" (dict "imageRoot" .Values.image "global" .Values.global "repository" .Values.image.uiRepository ) }}
+{{- end -}}
+
+{{/*
 Common labels
 */}}
 {{- define "layer0_describo.labels" -}}

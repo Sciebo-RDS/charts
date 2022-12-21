@@ -6,6 +6,7 @@ Expand the name of the chart.
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
+
 {{/*
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
@@ -54,4 +55,8 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- else if hasKey .Values "domain" }}
 {{- .Values.domain -}}
 {{- else }}"localhost"{{- end -}}
+{{- end -}}
+
+{{- define "layer0_web.image" -}}
+{{ include "common.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
 {{- end -}}

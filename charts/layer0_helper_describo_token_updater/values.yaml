@@ -1,12 +1,13 @@
-# Default values for circle3_token_storage.
+# Default values for layer3_token_storage.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
 
 image:
-  repository: zivgitlab.wwu.io/sciebo-rds/rds-web/port_helper_describo_token_updater
-  tag: latest
+  registry: zivgitlab.wwu.io
+  repository: sciebo-rds/sciebo-rds/port_helper_describo_token_updater
+  tag: release
   pullPolicy: Always
 
 labels:
@@ -37,4 +38,4 @@ affinity: {}
 
 environment:
   DESCRIBO_API_ENDPOINT: http://layer0-describo:80/api/session/application
-  DESCRIBO_API_SECRET: XYZ
+
