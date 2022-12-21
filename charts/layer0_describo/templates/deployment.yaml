@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "layer0_describo.fullname" . }}
+  namespace: {{ .Release.Namespace  }}
   labels:
 {{ include "layer0_describo.labels" . | indent 4 }}
 spec:
@@ -33,36 +34,21 @@ spec:
     {{- end }}
       containers:
         - name: "api"
-          image: "{{ .Values.image.repository }}{{ .Values.image.api }}:{{ .Values.image.tag }}"
+          image: {{ template "layer0_describo.apiImage" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - name: describo-configuration
-              mountPath: /srv/configuration.json
+              mountPath: /srv/api/configuration.json
               subPath: configuration.json
               readOnly: true
             - name: describo-configuration
-              mountPath: /srv/type-definitions-lookup.json
+              mountPath: /srv/profiles/type-definitions-lookup.json
               subPath: type-definitions-lookup.json
               readOnly: true
             - name: describo-configuration
-              mountPath: /srv/type-definitions.json
+              mountPath: /srv/profiles/type-definitions.json
               subPath: type-definitions.json
               readOnly: true
-          env:
-          - name: "DB_HOST"
-            value: {{ .Values.environment.DB_HOST | quote }}
-          - name: "DB_PORT"
-            value: {{ .Values.environment.DB_PORT | quote }}
-          - name: "DB_USER"
-            value: {{ .Values.environment.DB_USER | quote }}
-          - name: "DB_PASSWORD"
-            value: {{ .Values.environment.DB_PASSWORD | quote }}
-          - name: "DB_DATABASE"
-            value: {{ .Values.environment.DB_DATABASE | quote }}
-          - name: "NODE_ENV"
-            value: "production"
-          - name: "LOG_LEVEL"
-            value: {{ .Values.environment.LOG_LEVEL | quote}}
           envFrom:
           - configMapRef:
               name: mservice
@@ -70,10 +56,12 @@ spec:
               name: proxy
           - configMapRef:
               name: globalenvvar
+          - configMapRef:
+              name: describoconfig
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
         - name: "ui"
-          image: "{{ .Values.image.repository }}{{ .Values.image.ui }}:{{ .Values.image.tag }}"
+          image: {{ template "layer0_describo.uiImage" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
             - name: describo-configuration
