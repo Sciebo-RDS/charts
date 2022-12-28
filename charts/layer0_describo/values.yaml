@@ -83,6 +83,6 @@ postgresql:
   postgresqlUsername: "admin"
   postgresqlPassword: "admin"
 
-  global:
+global:
   describo:
     domain: ""

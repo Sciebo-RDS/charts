@@ -69,6 +69,7 @@ environment:
   #SOCKETIO_HOST: https://<your-rds-installation>
   SOCKETIO_PATH: /socket.io/
   VUE_APP_BASE_URL: /
+  # ADRESS: "adress"
 
 global:
   rds:
