@@ -1,13 +1,17 @@
 {{- $domains := .Values.domains -}}
 {{- if .Values.global }}
-    {{- if .Values.global.domains }}
-        {{- $domains = .Values.global.domains -}}
-    {{- end -}}
-{{- end -}}
+  {{- if .Values.global.domains }}
+    {{- $domains = .Values.global.domains -}}
+  {{- end }}
+{{- end }}
 
 {{- if not $domains -}}
-{{- $name := (dict "name" (.Values.environment.ADDRESS | replace "https://" "" | replace "http://" "")) -}}
-{{- $domains = (list (merge .Values.environment $name)) -}}
+  {{- if .Values.environment.ADRESS -}}
+    {{- $name := (dict "name" (.Values.environment.ADDRESS | trimPrefix "https://" | trimPrefix "http://")) -}}
+    {{- $domains = (list (merge .Values.environment $name)) -}}
+  {{- else -}}
+    {{- $domains = (list (.Values.environment)) -}}
+  {{- end -}}
 {{- end -}}
 
 {{- range $domains }}

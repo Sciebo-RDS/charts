@@ -16,7 +16,7 @@ labels:
   research-data-services.org/layer: layer1
 
 nameOverride: ""
-fullnameOverride: layer1-port-owncloud
+fullnameOverride: "layer1-port-owncloud"
 
 service:
   type: ClusterIP
@@ -29,6 +29,9 @@ domain: localhost
 ingress:
   tls:
     secretName: sciebords-tls-public
+
+environment: 
+  ADRESS: 
 
 resources:
   {}
