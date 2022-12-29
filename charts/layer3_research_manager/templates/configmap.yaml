@@ -4,5 +4,5 @@ metadata:
   name: layer3researchconfig
   namespace: {{ .Release.Namespace  }}
 data:
-  REDIS_HOST: {{ .Values.global.REDIS_HOST | quote }}
-  REDIS_PORT: {{ .Values.global.REDIS_PORT | quote }}
+  REDIS_HOST: {{ .Values.environment.REDIS_HOST | quote }}
+  REDIS_PORT: {{ .Values.environment.REDIS_PORT | quote }}
