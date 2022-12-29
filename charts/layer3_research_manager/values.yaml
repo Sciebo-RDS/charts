@@ -47,3 +47,6 @@ environment:
   REDIS_HOST: redis
   REDIS_PORT: 6379
   IN_MEMORY_AS_FAILOVER: "False"
+
+global:
+  REDIS_HOST:
