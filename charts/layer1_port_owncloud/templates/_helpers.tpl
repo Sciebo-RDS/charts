@@ -17,7 +17,7 @@ If release name contains chart name it will be used as a full name.
 */}}
 {{- define "layer1_port_owncloud.fullname" -}}
 {{- if .Values.fullnameOverride -}}
-{{- printf "%s-%s" (.Values.fullnameOverride | trunc 63 | trimSuffix "-") (.name | replace "." "-" | replace ":" "-") -}}
+{{- printf "%s-%s" (.Values.fullnameOverride | trunc 63 | trimSuffix "-") (.name) | replace "." "-" | replace ":" "-") -}}
 {{- else -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- if contains $name .Release.Name -}}

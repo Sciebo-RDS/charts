@@ -9,7 +9,7 @@ chart-test:
   stage: test
   variables:
     helm_version: 3.10.0
-   tags:
+  tags:
     - autoscaling
     - mike
   before_script:
