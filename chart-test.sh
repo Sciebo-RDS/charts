@@ -8,10 +8,10 @@ KUBEVAL_FAILED=""
 
 
 for d in charts/*/ ; do
-  echo -e "${BLUE}============================= testing $d =============================${NC}"
-  echo -e "${BLUE}----------------------------- building dependencies -----------------------------${NC}"
+  echo -e "${BLUE}testing $d ==========================================================${NC}"
+  echo -e "${BLUE}building dependencies -----------------------------------------------${NC}"
   helm dependency build "$d"
-  echo -e "${BLUE}----------------------------- linting -----------------------------${NC}"
+  echo -e "${BLUE}linting -------------------------------------------------------------${NC}"
   helm lint "$d"
   
   if [ $? != 0 ] 
@@ -20,7 +20,7 @@ for d in charts/*/ ; do
     LINT_FAILED="$LINT_FAILED $d"
   fi
 
-  echo -e "${BLUE}----------------------------- kubeval -----------------------------${NC}"
+  echo -e "${BLUE}kubeval -------------------------------------------------------------${NC}"
   helm template "$d" | kubeval --ignore-missing-schemas
   
   if [ $? != 0 ] 
@@ -32,7 +32,7 @@ for d in charts/*/ ; do
 done
 
 echo
-echo -e "${BLUE}============================= LINT FAILS =============================${NC}"
+echo -e "${BLUE}LINT FAILS ============================================================${NC}"
 echo 
 for d in $LINT_FAILED ; do
   echo $d
@@ -43,7 +43,7 @@ echo "In total $NR_LINT_FAILED"
 echo
 
 echo
-echo -e "${BLUE}============================= KUBEVAL FAILS =============================${NC}"
+echo -e "${BLUE}KUBEVAL FAILS =========================================================${NC}"
 echo 
 for d in $KUBEVAL_FAILED ; do
   echo $d
