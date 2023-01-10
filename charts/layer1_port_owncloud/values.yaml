@@ -30,8 +30,8 @@ ingress:
   tls:
     secretName: sciebords-tls-public
 
-environment: 
-  ADRESS: 
+environment:
+  ADRESS: https://test-adress.de
 
 resources:
   {}

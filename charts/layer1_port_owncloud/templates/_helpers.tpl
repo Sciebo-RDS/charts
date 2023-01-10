@@ -1,11 +1,22 @@
 {{/* vim: set filetype=mustache: */}}
 {{/*
 Expand the name of the chart.
+
+Required: 
+    .Chart.Name or .Values.nameOverride
+    .name
 */}}
 {{- define "layer1_port_owncloud.name" -}}
 {{- printf "%s-%s" (default .Chart.Name .Values.nameOverride) (.name | replace "." "-" | replace ":" "-") -}}
 {{- end -}}
 
+{{/*
+Format the name of the image as a dictionary.
+
+Required:
+    .Values.image
+    .Values.global
+*/}}
 {{- define "layer1_port_owncloud.image" -}}
 {{ include "common.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
 {{- end -}}
@@ -14,6 +25,13 @@ Expand the name of the chart.
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
+
+Required:
+    .Values
+    .Chart
+    .Release
+    if .Values.fullnameOverride then .name
+    else .Chart.Name and .Values.nameOverride
 */}}
 {{- define "layer1_port_owncloud.fullname" -}}
 {{- if .Values.fullnameOverride -}}
@@ -30,6 +48,10 @@ If release name contains chart name it will be used as a full name.
 
 {{/*
 Create chart name and version as used by the chart label.
+
+Required:
+    .Chart.Name
+    .Chart.Version
 */}}
 {{- define "layer1_port_owncloud.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" -}}
@@ -37,6 +59,14 @@ Create chart name and version as used by the chart label.
 
 {{/*
 Common labels
+
+Required:
+    .Release.Name
+    .Release.Service
+    .Chart
+    .Values
+    if .Values.global then .Values.global.domain
+    
 */}}
 {{- define "layer1_port_owncloud.labels" -}}
 app.kubernetes.io/name: {{ include "layer1_port_owncloud.name" . }}
