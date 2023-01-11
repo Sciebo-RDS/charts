@@ -15,7 +15,7 @@ Also `if`, `then`, `else`, `and` and `or` may be used. Types may be provided.
 
 Example:
 
-```
+```yaml
 {{/*
 Prints the name of the chart.
 
