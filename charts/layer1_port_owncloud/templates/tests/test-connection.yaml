@@ -1,5 +1,5 @@
 {{- $domains := .Values.domains -}}
-{{- if .Values.global -}}
+{{- if .Values.global }}
   {{- if .Values.global.domains -}}
     {{- $domains = .Values.global.domains -}}
   {{- end -}}
