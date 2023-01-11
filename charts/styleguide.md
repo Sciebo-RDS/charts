@@ -15,7 +15,7 @@ Also `if`, `then` and `else` may be used.
 
 Example:
 
-``
+```
 {{/*
 Prints the name of the chart.
 
@@ -31,4 +31,4 @@ Requirements:
     {{- .name -}}
   {{- end -}}
 {{- end -}}
-``
+```
