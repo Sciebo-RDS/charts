@@ -1,5 +1,12 @@
 # Sciebo RDS Helm Charts
 
+ATTENTION:
+currently this is WIP.
+
+Productive helmcharts so far are in the "big" repo.
+
+Please stand by. ;-)
+
 This repo holds all charts for the sciebo rds microservices.
 
 ## Usage
