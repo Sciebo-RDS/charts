@@ -19,10 +19,10 @@ Example:
 {{/*
 Prints the name of the chart.
 
-Requirements:
-    .Values
-    if .Values.nameOverride then .Chart.Version
-    else String .name
+Scope:
+  .Values
+  if .Values.nameOverride then .Chart.Version
+  else String .name
 */}}
 {{- define "this_chart.name" -}}
   {{- if .Values.nameOverride }}
