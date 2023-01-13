@@ -62,7 +62,7 @@ charts_pages:
 
 # TODO: We should get rid of skaffold
 deploy:
-  extends: .deploy
+  stage: deploy
   image: harbor.uni-muenster.de/rds/skaffold:testing
   rules:
   - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
