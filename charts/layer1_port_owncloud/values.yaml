@@ -31,7 +31,7 @@ ingress:
     secretName: sciebords-tls-public
 
 environment:
-  ADRESS: https://test-adress.de
+  ADDRESS: "https://test-adress.de"
 
 resources:
   {}
@@ -51,4 +51,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+global:
+  namespace:
+    name: "test-namespace"
 

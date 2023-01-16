@@ -6,7 +6,7 @@
 {{- end -}}
 
 {{- if not $domains -}}
-  {{- $name := (dict "name" (.Values.environment.ADDRESS | replace "https://" "" | replace "http://" "")) -}}
+  {{- $name := (dict "name" (.Values.environment.ADDRESS | trimPrefix "https://" | trimPrefix "http://")) -}}
   {{- $domains = (list (merge .Values.environment $name)) -}}
 {{- end -}}
 
