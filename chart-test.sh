@@ -40,6 +40,8 @@ echo
 echo -e "${BLUE}LINT ALL-CHART WITH SUBCHARTS =========================================${NC}"
 echo 
 
+helm dependency update charts/all
+helm dependency build charts/all
 helm lint --with-subcharts charts/all 
 
 echo
