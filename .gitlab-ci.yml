@@ -18,7 +18,7 @@ chart-test:
     - curl -L "https://get.helm.sh/helm-v${helm_version}-linux-amd64.tar.gz" | tar zxf - -C /usr/local/bin --strip-components=1 linux-amd64/helm
   script:
     - chmod +x chart-test.sh > /dev/null
-    - chmod g-r /builds/sciebo-rds/charts.tmp/KUBECONFIG > /dev/null
+    - chmod go-r /builds/sciebo-rds/charts.tmp/KUBECONFIG > /dev/null
     - ./chart-test.sh
 
 charts:
