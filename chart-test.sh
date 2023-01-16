@@ -32,6 +32,12 @@ for d in charts/*/ ; do
 done
 
 echo
+echo -e "${BLUE}LINT ALL-CHART WITH SUBCHARTS =========================================${NC}"
+echo 
+
+helm lint --with-subcharts charts/all 
+
+echo
 echo -e "${BLUE}LINT FAILS ============================================================${NC}"
 echo 
 for d in $LINT_FAILED ; do
