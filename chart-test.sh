@@ -42,7 +42,8 @@ echo
 
 helm dependency update charts/all
 helm dependency build charts/all
-helm lint --with-subcharts charts/all 
+helm lint --with-subcharts charts/all
+helm template "$d" | kubeval --ignore-missing-schemas
 
 echo
 echo -e "${BLUE}LINT FAILS ============================================================${NC}"
