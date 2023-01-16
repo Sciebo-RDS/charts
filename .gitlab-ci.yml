@@ -17,7 +17,8 @@ chart-test:
     - curl -L "https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz" | tar zxf - -C /usr/local/bin kubeval
     - curl -L "https://get.helm.sh/helm-v${helm_version}-linux-amd64.tar.gz" | tar zxf - -C /usr/local/bin --strip-components=1 linux-amd64/helm
   script:
-    - bash chart-test.sh
+    - chmod +x chart-test.sh > /dev/null
+    - ./chart-test.sh > /dev/null
 
 charts:
   stage: deploy
