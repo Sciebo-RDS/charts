@@ -17,10 +17,6 @@ for d in charts/*/ ; do
   echo Name: $name
   echo Version $version
   
-  if [ "$test"=="True" ]
-  then
-    version="$version-t"
-  fi
   # Check for uploaded version
   helm repo add --username "$username" --password "$password" "$project" "$repo"
   test $(helm search repo "$project/$name" --version "$version" --output json | jq length) = 0
