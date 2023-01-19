@@ -19,7 +19,7 @@ chart-test:
   script:
     - chmod +x chart-test.sh > /dev/null
     - chmod go-r /builds/sciebo-rds/charts.tmp/KUBECONFIG > /dev/null
-    - ./chart-test.sh
+    - ./ci-scripts/chart-test.sh
 
 charts:
   stage: deploy
