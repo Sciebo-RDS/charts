@@ -3,7 +3,7 @@ include:
     file: '.gitlab-ci-helm.yml'
     ref: 'v12'
 
-chart-test:
+test charts:
   image:
     name: harbor.uni-muenster.de/proxy-docker/library/alpine:3.16.2
   stage: test
@@ -17,9 +17,59 @@ chart-test:
     - curl -L "https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz" | tar zxf - -C /usr/local/bin kubeval
     - curl -L "https://get.helm.sh/helm-v${helm_version}-linux-amd64.tar.gz" | tar zxf - -C /usr/local/bin --strip-components=1 linux-amd64/helm
   script:
-    - chmod +x chart-test.sh > /dev/null
+    - chmod +x ./ci-scripts/chart-test.sh > /dev/null
     - chmod go-r /builds/sciebo-rds/charts.tmp/KUBECONFIG > /dev/null
     - ./ci-scripts/chart-test.sh
+
+# if the commit message starts with "test deploy", all the chartsin the charts folder are uploaded to
+# the harbor project.
+test deploy charts to harbor:
+  image:
+    name: harbor.uni-muenster.de/proxy-docker/library/alpine:3.16.2
+  stage: deploy
+  variables:
+    helm_version: 3.10.0
+    pedantic: "True"
+    endpoint: "https://harbor.uni-muenster.de/api/chartrepo/${project}/charts"
+    repo: "https://harbor.uni-muenster.de/chartrepo/${project}"
+    skip_dependencies: "false"
+  tags:
+    - autoscaling
+    - mike
+  before_script:
+    - apk add curl jq python3 py3-pip
+    - curl -L "https://get.helm.sh/helm-v${helm_version}-linux-amd64.tar.gz" | tar zxf - -C /usr/local/bin --strip-components=1 linux-amd64/helm
+    - pip install yq
+    - export test="True"
+  script:
+    - chmod +x ./ci-scripts/chart-deploy.sh > /dev/null
+    - ./ci-scripts/chart-deploy.sh
+  rules:
+    - if: 'CI_COMMIT_MESSAGE =~ /^test\sdepoloy/'
+
+
+deploy charts to harbor:
+  image:
+    name: harbor.uni-muenster.de/proxy-docker/library/alpine:3.16.2
+  stage: deploy
+  variables:
+    helm_version: 3.10.0
+    endpoint: "https://harbor.uni-muenster.de/api/chartrepo/${project}/charts"
+    repo: "https://harbor.uni-muenster.de/chartrepo/${project}"
+  tags:
+    - autoscaling
+    - mike
+  before_script:
+    - apk add curl jq python3 py3-pip
+    - curl -L "https://get.helm.sh/helm-v${helm_version}-linux-amd64.tar.gz" | tar zxf - -C /usr/local/bin --strip-components=1 linux-amd64/helm
+    - pip install yq
+    - export test="False"
+  script:
+    - chmod +x ./ci-scripts/chart-deploy.sh > /dev/null
+    - ./ci-scripts/chart-deploy.sh
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+
 
 charts:
   stage: deploy
