@@ -68,7 +68,7 @@ let nr_failed=$charts-$nr_charts_already_uploaded-$nr_charts_uploaded
 echo "Failed on charts:"
 not_failed="$charts_uploaded $charts_already_uploaded"
 for d in charts/*/ ; do
-  [[ $not_failed =~ $d ]] || echo "    $d"
+  [[ $not_failed =~ "$d" ]] || echo "    $d"
 done
 echo "in total $nr_failed/$charts"
 test $nr_failed = 0 || exit 1
