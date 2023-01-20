@@ -10,10 +10,11 @@ endpoint="https://harbor.uni-muenster.de/api/chartrepo/${project}/charts"
 repo="https://harbor.uni-muenster.de/chartrepo/${project}"
 
 for d in charts/*/ ; do
+  echo -e "${BLUE}deploying $d ========================================================${NC}"
   export version="$(cat "$d/Chart.yaml" | yq -r .version)"
   export name="$(cat "$d/Chart.yaml" | yq -r .name )"
   test $name && test $version
-  echo Chart 
+  
   echo Name: $name
   echo Version $version
   
