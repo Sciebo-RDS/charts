@@ -20,7 +20,7 @@ for d in charts/*/ ; do
   echo -e "${BLUE}deploying $d ========================================================${NC}"
   export version="$(cat "$d/Chart.yaml" | yq -r .version)"
   export name="$(cat "$d/Chart.yaml" | yq -r .name )"
-  if [ $name && test $version ]
+  if [ $name ] && [ $version ]
   then
     echo Name: $name
     echo Version $version
