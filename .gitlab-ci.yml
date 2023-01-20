@@ -22,7 +22,7 @@ test charts:
     - ./ci-scripts/chart-test.sh
   rules:
     - changes: 
-      - charts/*/
+      - charts/**/*
 
 deploy charts to harbor:
   image:
