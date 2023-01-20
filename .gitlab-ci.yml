@@ -35,11 +35,6 @@ deploy charts to harbor:
   script:
     - chmod +x ./ci-scripts/chart-deploy.sh > /dev/null
     - ./ci-scripts/chart-deploy.sh
-  rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
-    - if: '$CI_COMMIT_BRANCH == "release"'
-    - if: '$CI_COMMIT_MESSAGE == "harbor upload"'
-
 
 charts:
   stage: deploy
