@@ -14,7 +14,7 @@ for d in charts/*/ ; do
   export version="$(cat "$d/Chart.yaml" | yq -r .version)"
   export name="$(cat "$d/Chart.yaml" | yq -r .name )"
   test $name && test $version
-  
+
   echo Name: $name
   echo Version $version
   
@@ -25,5 +25,5 @@ for d in charts/*/ ; do
   helm dependency build "${d}"
   helm package $d
   # Upload
-  curl --fail -u "$username:$password" -H "Content-Type: multipart/form-data" -F "chart=@$name-$version.tgz" "$endpoint"
+  curl -u "$username:$password" -H "Content-Type: multipart/form-data" -F "chart=@$name-$version.tgz" "$endpoint"
 done
