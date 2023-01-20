@@ -20,11 +20,16 @@ test charts:
     - chmod +x ./ci-scripts/chart-test.sh > /dev/null
     - chmod go-r /builds/sciebo-rds/charts.tmp/KUBECONFIG > /dev/null
     - ./ci-scripts/chart-test.sh
+  rules:
+    - changes: 
+      - charts/*/
 
 deploy charts to harbor:
   image:
     name: harbor.uni-muenster.de/proxy-docker/library/alpine:3.16.2
   stage: deploy
+  variables:
+    helm_version: 3.10.0
   tags:
     - autoscaling
     - mike
