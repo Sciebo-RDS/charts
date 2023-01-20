@@ -36,7 +36,7 @@ for d in charts/*/ ; do
       if [ $? == 0 ]
       then
         charts_uploaded="$charts_already_uploaded $d"
-        let nr_charts_upladed=$nr_charts_upladed+1
+        let nr_charts_uploaded=$nr_charts_uploaded+1
       fi
     else
       echo "Chart was already uploaded"
@@ -51,13 +51,13 @@ done
 echo -e "${BLUE}SUMMARY ===============================================================${NC}"
 echo
 echo "Charts Uploaded:"
-for chart in charts_uploaded ; do
+for chart in $charts_uploaded ; do
   echo "    $chart"
 done
 echo "in total $nr_charts_uploaded/$charts"
 echo 
 echo "Charts that were already uploaded:"
-for chart in charts_already_uploaded ; do
+for chart in $charts_already_uploaded ; do
   echo "    $chart"
 done
 echo
