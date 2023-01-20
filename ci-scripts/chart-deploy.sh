@@ -35,13 +35,13 @@ for d in charts/*/ ; do
       curl -u "$username:$password" -H "Content-Type: multipart/form-data" -F "chart=@$name-$version.tgz" "$endpoint"
       if [ $? == 0 ]
       then
-        charts_uploaded="$charts_already_uploaded $d"
+        charts_uploaded="$charts_uploaded $d"
         let nr_charts_uploaded=$nr_charts_uploaded+1
       fi
     else
       echo "Chart was already uploaded"
       charts_already_uploaded="$charts_already_uploaded $d"
-      let nr_charts_already_uploaded=$nr_charts_already_upoladed+1
+      let nr_charts_already_uploaded=$nr_charts_already_uploaded+1
     fi
   else
     echo "Version or Name not provided"
@@ -67,7 +67,7 @@ echo
 let nr_failed=$charts-$nr_charts_already_uploaded-$nr_charts_uploaded
 echo "Failed on charts:"
 for d in charts/*/ ; do
-  if [ $charts_uploaded !~ $d ] && [ $charts_already_uploaded !~$d ]
+  if [ $charts_uploaded !~ ($d) ] && [ $charts_already_uploaded !~ ($d) ]
   then
     echo "    $d"
   fi
