@@ -13,7 +13,7 @@ charts=0
 charts_uploaded=""
 nr_charts_uploaded=0
 charts_already_uploaded=""
-nr_charts_already_upladed=0
+nr_charts_already_uploaded=0
 
 for d in charts/*/ ; do
   let charts=$charts+1
@@ -41,7 +41,7 @@ for d in charts/*/ ; do
     else
       echo "Chart was already uploaded"
       charts_already_uploaded="$charts_already_uploaded $d"
-      let nr_charts_already_upladed=$nr_charts_already_upladed+1
+      let nr_charts_already_uploaded=$nr_charts_already_upoladed+1
     fi
   else
     echo "Version or Name not provided"
@@ -64,12 +64,13 @@ echo "in total $nr_charts_already_uploaded/$charts"
 echo
 
 # do not fail only if all charts were either uploaded or already uploaded
-let nr_failed=$charts-$nr_charts_already_upladed-$nr_charts_upladed
+let nr_failed=$charts-$nr_charts_already_uploaded-$nr_charts_upladed
 echo "Failed on charts:"
 for $d in charts/*/ ; do
   if [ $charts_uploaded !~ $d ] && [ $charts_already_uploaded !~$d ]
+  then
     echo "    $d"
-  then 
+  fi
 done
 echo "in total $nr_failed/$charts"
 test $nr_failed = 0 || exit 1
