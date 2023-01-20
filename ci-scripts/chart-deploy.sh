@@ -11,7 +11,7 @@ helm repo add --username "$username" --password "$password" "$project" "$repo"
 
 charts=0
 charts_uploaded=""
-nr_charts_upladed=0
+nr_charts_uploaded=0
 charts_already_uploaded=""
 nr_charts_already_upladed=0
 
@@ -50,7 +50,7 @@ done
 
 echo -e "${BLUE}SUMMARY ===============================================================${NC}"
 echo
-echo "Charts Uploaded:"
+echo "Charts uploaded:"
 for chart in $charts_uploaded ; do
   echo "    $chart"
 done
@@ -60,12 +60,13 @@ echo "Charts that were already uploaded:"
 for chart in $charts_already_uploaded ; do
   echo "    $chart"
 done
+echo "in total $nr_charts_already_uploaded/$charts"
 echo
 
 # do not fail only if all charts were either uploaded or already uploaded
 let nr_failed=$charts-$nr_charts_already_upladed-$nr_charts_upladed
+echo "Failed on charts:"
 for $d in charts/*/ ; do
-Failed on charts:
   if [ $charts_uploaded !~ $d ] && [ $charts_already_uploaded !~$d ]
     echo "    $d"
   then 
