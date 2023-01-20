@@ -66,11 +66,10 @@ echo
 # do not fail only if all charts were either uploaded or already uploaded
 let nr_failed=$charts-$nr_charts_already_uploaded-$nr_charts_uploaded
 echo "Failed on charts:"
+not_failed="$charts_uploaded $charts_already_uploaded"
 for d in charts/*/ ; do
-  if [ $charts_uploaded !~ ($d) ] && [ $charts_already_uploaded !~ ($d) ]
-  then
-    echo "    $d"
-  fi
+  # from stack overflow. prints $d if $d is not contained in $not_failed
+  [[ $not_failed =~ (^| )$d($| ) ]] || echo "    $d"
 done
 echo "in total $nr_failed/$charts"
 test $nr_failed = 0 || exit 1
