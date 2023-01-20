@@ -39,6 +39,7 @@ deploy charts to harbor:
     - pip install yq
   script:
     - chmod +x ./ci-scripts/chart-deploy.sh > /dev/null
+    - chmod go-r /builds/sciebo-rds/charts.tmp/KUBECONFIG > /dev/null
     - ./ci-scripts/chart-deploy.sh
 
 charts:
