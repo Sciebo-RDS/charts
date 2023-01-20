@@ -49,25 +49,26 @@ for d in charts/*/ ; do
 done
 
 echo -e "${BLUE}SUMMARY ===============================================================${NC}"
-echo
+echo ""
 echo "Charts uploaded:"
 for chart in $charts_uploaded ; do
   echo "    $chart"
 done
 echo "in total $nr_charts_uploaded/$charts"
-echo 
+echo ""
 echo "Charts that were already uploaded:"
 for chart in $charts_already_uploaded ; do
   echo "    $chart"
 done
 echo "in total $nr_charts_already_uploaded/$charts"
-echo
+echo ""
 
 # do not fail only if all charts were either uploaded or already uploaded
 let nr_failed=$charts-$nr_charts_already_uploaded-$nr_charts_uploaded
 echo "Failed on charts:"
 not_failed="$charts_uploaded $charts_already_uploaded"
 for d in charts/*/ ; do
+  echo $d
   # from stack overflow. prints $d if $d is not contained in $not_failed
   [[ $not_failed =~ (^| )$d($| ) ]] || echo "    $d"
 done
