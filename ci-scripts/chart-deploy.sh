@@ -30,7 +30,7 @@ for d in charts/*/ ; do
     then
       # Package
       helm dependency build "${d}"
-      helm package $d
+      helm package --version "$version" $d
       # Upload
       curl -u "$username:$password" -H "Content-Type: multipart/form-data" -F "chart=@$name-$version.tgz" "$endpoint"
       if [ $? == 0 ]
