@@ -61,7 +61,14 @@ for chart in $charts_already_uploaded ; do
   echo "    $chart"
 done
 echo
+
 # do not fail only if all charts were either uploaded or already uploaded
 let nr_failed=$charts-$nr_charts_already_upladed-$nr_charts_upladed
-echo "Failed to upload $nr_failed/$charts"
+for $d in charts/*/ ; do
+Failed on charts:
+  if [ $charts_uploaded !~ $d ] && [ $charts_already_uploaded !~$d ]
+    echo "    $d"
+  then 
+done
+echo "in total $nr_failed/$charts"
 test $nr_failed = 0 || exit 1
