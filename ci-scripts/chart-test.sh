@@ -1,5 +1,3 @@
-set -e
-
 BLUE='\033[1;34m'
 NC='\033[0m'
 
@@ -26,7 +24,7 @@ for d in charts/*/ ; do
     fi
 
     echo -e "${BLUE}kubeval -------------------------------------------------------------${NC}"
-    helm template "$d" | kubeval --ignore-missing-schemas
+    helm template "$d" | kubeval --ignore-missing-schemas 
     
     if [ $? != 0 ] 
     then 
@@ -66,3 +64,7 @@ done
 echo
 echo "In total $NR_KUBEVAL_FAILED"
 echo
+
+let $NR_FAILED=$NR_KUBEVAL_FAILED + $NR_LINT_FAILED
+
+test $NR_FAILED = 0 || exit 1
