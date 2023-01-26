@@ -42,4 +42,3 @@ environment:
 global:
   describo:
     api_secret: ""
-

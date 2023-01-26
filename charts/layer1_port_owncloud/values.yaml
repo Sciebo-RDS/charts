@@ -30,9 +30,12 @@ ingress:
   tls:
     secretName: sciebords-tls-public
 
+<<<<<<< HEAD
 environment:
   ADDRESS: "https://test-adress.de"
 
+=======
+>>>>>>> main
 resources:
   {}
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -52,7 +55,10 @@ tolerations: []
 
 affinity: {}
 
+<<<<<<< HEAD
 global:
   namespace:
     name: "test-namespace"
 
+=======
+>>>>>>> main
