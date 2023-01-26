@@ -51,10 +51,6 @@ tolerations: []
 
 affinity: {}
 
-<<<<<<< HEAD
 global:
   namespace:
     name: "test-namespace"
-
-=======
->>>>>>> main
