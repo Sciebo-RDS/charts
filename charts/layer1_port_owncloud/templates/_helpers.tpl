@@ -6,6 +6,9 @@ Expand the name of the chart.
 {{- printf "%s-%s" (default .Chart.Name .Values.nameOverride) (.name | replace "." "-" | replace ":" "-") -}}
 {{- end -}}
 
+{{/*
+Format the name of the image as a dictionary.
+*/}}
 {{- define "layer1_port_owncloud.image" -}}
 {{ include "common.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
 {{- end -}}

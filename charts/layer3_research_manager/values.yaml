@@ -24,8 +24,7 @@ service:
   annotations:
     prometheus.io/scrape: "true"
 
-resources:
-  {}
+resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -47,3 +46,7 @@ environment:
   REDIS_HOST: redis
   REDIS_PORT: 6379
   IN_MEMORY_AS_FAILOVER: "False"
+
+global: 
+  REDIS_HOST:
+  REDIS_PORT:
