@@ -29,6 +29,7 @@ for d in charts/*/ ; do
     if [ $(helm search repo "$project/$name" --version "$version" --output json | jq length) == 0 ]
     then
       # Package
+      helm dependency update "${d}"
       helm dependency build "${d}"
       helm package --version "$version" $d
       # Upload
