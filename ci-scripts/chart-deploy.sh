@@ -15,11 +15,20 @@ nr_charts_uploaded=0
 charts_already_uploaded=""
 nr_charts_already_uploaded=0
 
+# build dependencies
+for d in charts/*/ ; do
+  helm dependency update "${d}"
+done
+
+for d in charts/*/ ; do
+  helm depedency build "${d}"
+done
+
 for d in charts/*/ ; do
   let charts=$charts+1
   echo -e "${BLUE}deploying $d ========================================================${NC}"
-  export version="$(cat "$d/Chart.yaml" | yq -r .version)"
-  export name="$(cat "$d/Chart.yaml" | yq -r .name )"
+  version="$(cat "$d/Chart.yaml" | yq -r .version)"
+  name="$(cat "$d/Chart.yaml" | yq -r .name )"
   if [ $name ] && [ $version ]
   then
     echo Name: $name
@@ -29,8 +38,6 @@ for d in charts/*/ ; do
     if [ $(helm search repo "$project/$name" --version "$version" --output json | jq length) == 0 ]
     then
       # Package
-      helm dependency update "${d}"
-      helm dependency build "${d}"
       helm package --version "$version" $d
       # Upload
       curl -u "$username:$password" -H "Content-Type: multipart/form-data" -F "chart=@$name-$version.tgz" "$endpoint"
