@@ -16,12 +16,25 @@ charts_already_uploaded=""
 nr_charts_already_uploaded=0
 
 # build dependencies
+echo -e "${BLUE}dependency update =====================================================${NC}"
 for d in charts/*/ ; do
   helm dependency update "${d}"
 done
 
+echo -e "${BLUE}dependency build ======================================================${NC}"
 for d in charts/*/ ; do
   helm depedency build "${d}"
+done
+
+echo -e "${BLUE}package ===============================================================${NC}"
+for d in charts/*/ ; do
+  version="$(cat "$d/Chart.yaml" | yq -r .version)"
+  if [ $version ]
+  then
+    helm package --version "$version" $d
+  else 
+    helm package $d
+  fi
 done
 
 for d in charts/*/ ; do
@@ -37,8 +50,6 @@ for d in charts/*/ ; do
     # Check for uploaded version
     if [ $(helm search repo "$project/$name" --version "$version" --output json | jq length) == 0 ]
     then
-      # Package
-      helm package --version "$version" $d
       # Upload
       curl -u "$username:$password" -H "Content-Type: multipart/form-data" -F "chart=@$name-$version.tgz" "$endpoint"
       if [ $? == 0 ]
