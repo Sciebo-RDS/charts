@@ -15,15 +15,16 @@ nr_charts_uploaded=0
 charts_already_uploaded=""
 nr_charts_already_uploaded=0
 
+
 # build dependencies
 echo -e "${BLUE}dependency update =====================================================${NC}"
 for d in charts/*/ ; do
-  helm dependency update "${d}"
+  helm dependency update "${d}" || exit 1
 done
 
 echo -e "${BLUE}dependency build ======================================================${NC}"
 for d in charts/*/ ; do
-  helm depedency build "${d}"
+  helm dependency build "${d}" || exit 1
 done
 
 echo -e "${BLUE}package ===============================================================${NC}"
@@ -31,9 +32,9 @@ for d in charts/*/ ; do
   version="$(cat "$d/Chart.yaml" | yq -r .version)"
   if [ $version ]
   then
-    helm package --version "$version" $d
+    helm package --version "$version" $d || exit 1
   else 
-    helm package $d
+    helm package $d || exit 1
   fi
 done
 
