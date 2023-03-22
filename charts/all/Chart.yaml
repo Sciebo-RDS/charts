@@ -104,3 +104,7 @@ dependencies:
     condition: feature.redis
     tags:
       - storage
+  - name: nextcloud
+    version: ^3.5.2
+    repository: https://nextcloud.github.io/helm/
+    condition: feature.nextcloud
