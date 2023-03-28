@@ -44,5 +44,11 @@ dependencies:
 - name: redis
   repository: file://../redis
   version: 16.13.2
-digest: sha256:643d0156dd67144f1b4fddf70d07155fbe6fc13ae31c06f0ef402f39b6580887
-generated: "2023-01-16T12:41:35.854+01:00"
+- name: nextcloud
+  repository: https://nextcloud.github.io/helm/
+  version: 3.5.4
+- name: owncloud
+  repository: https://owncloud-docker.github.io/helm-charts
+  version: 0.4.1
+digest: sha256:f1b7af01ca54c4afc63a5dd344e4b8ca30deb9e8312609c1397015dc0886c630
+generated: "2023-03-28T09:29:07.381386431+02:00"
