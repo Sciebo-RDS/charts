@@ -22,4 +22,10 @@ data:
   OWNCLOUD_INSTALLATION_URL: {{ .ADDRESS | quote }}
   OWNCLOUD_OAUTH_CLIENT_SECRET: {{ .OAUTH_CLIENT_SECRET | quote }}
   SERVICENAME: {{ .name | replace "." "-" | replace ":" "-" }}
+  {{ if not .INTERNAL_ADDRESS }}
+  OWNCLOUD_INTERNAL_INSTALLATION_URL: {{ .ADDRESS | quote }}
+  {{ end }}
+  {{ if .INTERNAL_ADDRESS }}
+  OWNCLOUD_INTERNAL_INSTALLATION_URL: {{ .INTERNAL_ADDRESS | quote }}
+  {{ end }}
 {{- end }}

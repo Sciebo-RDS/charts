@@ -104,3 +104,11 @@ dependencies:
     condition: feature.redis
     tags:
       - storage
+  - name: nextcloud
+    version: ^3.5.2
+    repository: https://nextcloud.github.io/helm/
+    condition: feature.nextcloud
+  - name: owncloud
+    version: ^0.4.1
+    repository: https://owncloud-docker.github.io/helm-charts
+    condition: feature.owncloud

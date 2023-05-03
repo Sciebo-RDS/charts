@@ -32,6 +32,8 @@ namespace:
 feature:
   jaeger: false
   redis: true
+  nextcloud: false
+  owncloud: false
 layer0-web:
   enabled: true
   environment:
