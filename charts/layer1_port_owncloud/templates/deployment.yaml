@@ -37,6 +37,17 @@ spec:
         - name: {{ $.Chart.Name }}
           image: {{ template "layer1_port_owncloud.image"  $ }}
           imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          env:
+          - name: OWNCLOUD_OAUTH_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: layer1-port-owncloud-{{ .name | replace "." "-" | replace ":" "-" }}
+                key: "oauth-client-id"
+          - name: OWNCLOUD_OAUTH_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: layer1-port-owncloud-{{ .name | replace "." "-" | replace ":" "-" }}
+                key: "oauth-client-secret"
           envFrom:
           - configMapRef:
               name: mservice

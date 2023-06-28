@@ -49,6 +49,17 @@ spec:
               mountPath: /srv/profiles/type-definitions.json
               subPath: type-definitions.json
               readOnly: true
+          env:
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: describo-pg-passwd
+                key: postgresql-password
+          - name: ADMIN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: admin-passwd
+                key: passwd
           envFrom:
           - configMapRef:
               name: mservice

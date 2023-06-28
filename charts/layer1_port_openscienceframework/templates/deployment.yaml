@@ -23,6 +23,17 @@ spec:
         - name: {{ .Chart.Name }}
           image: {{ template "layer1_port_openscienceframework.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: OAUTH_CLIENT_ID
+            valueFrom:
+              secretKeyRef:
+                name: osf-client
+                key: osf-client-id
+          - name: OAUTH_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: osf-client
+                key: osf-client-secret
           envFrom:
           - configMapRef:
               name: mservice
