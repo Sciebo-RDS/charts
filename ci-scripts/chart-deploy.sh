@@ -6,8 +6,13 @@ password=$HARBOR_ROBOT_TOKEN
 project="rds"
 endpoint="https://harbor.uni-muenster.de/api/chartrepo/${project}/charts"
 repo="https://harbor.uni-muenster.de/chartrepo/${project}"
+registry="harbor.uni-muenster.de/"
+repo="rds"
 
 helm repo add --username "$username" --password "$password" "$project" "$repo"
+# needed for dep build
+helm repo add nextcloud https://nextcloud.github.io/helm/
+helm repo add owncloud https://owncloud-docker.github.io/helm-charts
 
 charts=0
 charts_uploaded=""
@@ -38,6 +43,7 @@ for d in charts/*/ ; do
   fi
 done
 
+helm registry login -u "${username}" -p "${password}" "${registry}"
 for d in charts/*/ ; do
   let charts=$charts+1
   echo -e "${BLUE}deploying $d ========================================================${NC}"
@@ -47,22 +53,10 @@ for d in charts/*/ ; do
   then
     echo Name: $name
     echo Version $version
-    
+    # TODO
     # Check for uploaded version
-    if [ $(helm search repo "$project/$name" --version "$version" --output json | jq length) == 0 ]
-    then
-      # Upload
-      curl -u "$username:$password" -H "Content-Type: multipart/form-data" -F "chart=@$name-$version.tgz" "$endpoint"
-      if [ $? == 0 ]
-      then
-        charts_uploaded="$charts_uploaded $d"
-        let nr_charts_uploaded=$nr_charts_uploaded+1
-      fi
-    else
-      echo "Chart was already uploaded"
-      charts_already_uploaded="$charts_already_uploaded $d"
-      let nr_charts_already_uploaded=$nr_charts_already_uploaded+1
-    fi
+    helm push "${name}-${version}.tgz" oci://${registry}/${repo}\
+      && let nr_charts_already_uploaded=$nr_charts_already_uploaded+1
   else
     echo "Version or Name not provided"
   fi
