@@ -4,16 +4,10 @@ This repo holds all charts for the sciebo rds microservices.
 
 ## Usage
 
-Add this charts to your repository list.
-
+You can either check out this git repository and then use the charts directly
+or use the oci chart repository `oci://harbor.uni-muenster.de/rds/`, e.g. via:
 ```bash
-helm helm repo add rds https://harbor.uni-muenster.de/chartrepo/rds
-```
-
-Verify that the repo finds the charts
-
-```bash
-helm search repo rds
+helm install <release name> oci://harbor.uni-muenster.de/rds/all
 ```
 
 ## Install the whole system
@@ -25,9 +19,8 @@ If you want to install the whole system, you can use the *all* chart, which depe
 The following commands will add the needed repository, opens the `values.yaml` with vi and after you enter your credentials, it will try to install the chart with all services under the name "sciebo-rds" in your configured cluster with your `values.yaml`. If you changed something in the `values.yaml`, you only need to run the last command again.
 
 ```bash
-helm repo add rds https://harbor.uni-muenster.de/chartrepo/rds
 vi values.yaml
-helm upgrade rds rds/all --install --values values.yaml
+helm upgrade rds oci://harbor.uni-muenster.de/rds/all --install --values values.yaml
 ```
 
 The following table lists the most used configurable parameters of the Sciebo RDS chart and their default values.
