@@ -39,8 +39,8 @@ spec:
           env:
   {{- range $domain := .Values.global.domains }}
     {{- $name := $domain.name -}}
-    {{- $upper_name := upper $name | replace "." "_" -}}
-    {{- $lower_name := lower $name | replace "." "-" -}}
+    {{- $upper_name := regexReplaceAll "\\W+" $name "_" | upper -}}
+    {{- $lower_name := regexReplaceAll "\\W+" $name "-" | lower -}}
     {{- $client_id := printf "%s_%s" $upper_name "OAUTH_CLIENT_ID" }}
     {{- $client_secret := printf "%s_%s" $upper_name "OAUTH_CLIENT_SECRET" }}
           - name: {{ $client_id }}
