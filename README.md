@@ -66,7 +66,7 @@ The following table lists the most used configurable parameters of the Sciebo RD
 
 ##### Connector Branding
 
-Additionally, there a few parameters that can be used to "brand" a connector, e.g. show the logo of your branded owncloud instance, instead of the owncloud logo. None of these are required, as all connectors come with a default Displayname, Info- and HelpURL, Icon (Logo), Describo Profile. A "Go to project" button for published projects will only be available, if `PROJECT_LINK_TEMPLATE` is set.
+Additionally, there a few parameters that can be used to "brand" a connector, e.g. show the logo of your branded owncloud instance, instead of the owncloud logo. None of these are required, as all connectors come with a default Displayname, Info- and HelpURL, Icon (Logo), Describo Profile. A "Go to project" button for published projects will only be available if `PROJECT_LINK_TEMPLATE` is set.
 
 | Parameter                                              | Description                                                                      | Default / Example                                    |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------- |
