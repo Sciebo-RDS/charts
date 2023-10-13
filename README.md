@@ -62,6 +62,32 @@ The following table lists the most used configurable parameters of the Sciebo RD
 | `<component>.nodeSelector.*`                           |                                                                                  | {}                                                   |
 | `<component>.tolerations.*`                            |                                                                                  | []                                                   |
 | `<component>.affinity.*`                               |                                                                                  | {}                                                   |
+
+
+##### Connector Branding
+
+Additionally, there a few parameters that can be used to "brand" a connector, e.g. show the logo of your branded owncloud instance, instead of the owncloud logo.
+
+| Parameter                                              | Description                                                                      | Default / Example                                    |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| `layer1-port-zenodo.environment.DISPLAYNAME`           |                                                                                  |                                                      |
+| `layer1-port-zenodo.environment.INFO_URL`              |                                                                          |                                                      |
+| `layer1-port-zenodo.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-zenodo.environment.ICON`                  | Path to Image File                                                       |                                                      |
+| `layer1-port-zenodo.environment.METADATA_Profile`      | Path to Describo Profile                                                 |                                                      |
+| `layer1-port-zenodo.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-openscienceframework.environment.DISPLAYNAME`           |                                                                          |                                                      |
+| `layer1-port-openscienceframework.environment.INFO_URL`              |                                                                          |                                                      |
+| `layer1-port-openscienceframework.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-openscienceframework.environment.ICON`                  | Path to Image File                                                       |                                                      |
+| `layer1-port-openscienceframework.environment.METADATA_Profile`      | Path to Describo Profile                                                 |                                                      |
+| `layer1-port-openscienceframework.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-owncloud.environment.DISPLAYNAME`             |                                                                                  |                                                      |
+| `layer1-port-owncloud.environment.INFO_URL`                |                                                                                  |                                                      |
+| `layer1-port-owncloud.environment.HELP_URL`                |                                                                                  |                                                      |
+| `layer1-port-owncloud.environment.ICON`                    | Path to Image File                                                               |                                                      |
+
+
 If you need more parameters, please take a look into the values.yaml of the corresponding service.
 
 ### Dependencies
