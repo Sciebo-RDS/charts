@@ -32,6 +32,10 @@ ingress:
 
 environment:
   ADDRESS: "https://test-adress.de"
+  DISPLAYNAME: ""
+  INFO_URL: ""
+  HELP_URL: ""
+  ICON: ""
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
