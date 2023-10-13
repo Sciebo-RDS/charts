@@ -66,22 +66,22 @@ The following table lists the most used configurable parameters of the Sciebo RD
 
 ##### Connector Branding
 
-Additionally, there a few parameters that can be used to "brand" a connector, e.g. show the logo of your branded owncloud instance, instead of the owncloud logo.
+Additionally, there a few parameters that can be used to "brand" a connector, e.g. show the logo of your branded owncloud instance, instead of the owncloud logo. None of these are required, as all connectors come with a default Displayname, Info- and HelpURL, Icon (Logo), Describo Profile. A "Go to project" button for published projects will only be available, if `PROJECT_LINK_TEMPLATE` is set.
 
 | Parameter                                              | Description                                                                      | Default / Example                                    |
 | ------------------------------------------------------ | -------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | `layer1-port-zenodo.environment.DISPLAYNAME`           |                                                                                  |                                                      |
 | `layer1-port-zenodo.environment.INFO_URL`              |                                                                          |                                                      |
-| `layer1-port-zenodo.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-zenodo.environment.HELP_URL`              |                                                                          |                                                      |
 | `layer1-port-zenodo.environment.ICON`                  | Path to Image File                                                       |                                                      |
 | `layer1-port-zenodo.environment.METADATA_Profile`      | Path to Describo Profile                                                 |                                                      |
-| `layer1-port-zenodo.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-zenodo.environment.PROJECT_LINK_TEMPLATE`               | A template string for URLs to published projects                         | "https://zenodo.org/record/${projectID}", ${projectID} will be replaced by the ID provided by the repository |
 | `layer1-port-openscienceframework.environment.DISPLAYNAME`           |                                                                          |                                                      |
 | `layer1-port-openscienceframework.environment.INFO_URL`              |                                                                          |                                                      |
-| `layer1-port-openscienceframework.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-openscienceframework.environment.HELP_URL`              |                                                                          |                                                      |
 | `layer1-port-openscienceframework.environment.ICON`                  | Path to Image File                                                       |                                                      |
 | `layer1-port-openscienceframework.environment.METADATA_Profile`      | Path to Describo Profile                                                 |                                                      |
-| `layer1-port-openscienceframework.environment.HELP_URL           `   |                                                                          |                                                      |
+| `layer1-port-openscienceframework.environment.PROJECT_LINK_TEMPLATE` | A template string for URLs to published projects                         | "https://osf.io/${projectID}", ${projectID} will be replaced by the ID provided by the repository |
 | `layer1-port-owncloud.environment.DISPLAYNAME`             |                                                                                  |                                                      |
 | `layer1-port-owncloud.environment.INFO_URL`                |                                                                                  |                                                      |
 | `layer1-port-owncloud.environment.HELP_URL`                |                                                                                  |                                                      |
