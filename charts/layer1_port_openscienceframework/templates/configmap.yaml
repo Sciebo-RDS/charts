@@ -8,3 +8,10 @@ data:
     OPENSCIENCEFRAMEWORK_ADDRESS: {{ .Values.environment.ADDRESS | quote }}
     OPENSCIENCEFRAMEWORK_API_ADDRESS: {{ .Values.environment.API_ADDRESS | quote }}
     OPENSCIENCEFRAMEWORK_OAUTH_CLIENT_SECRET: {{ .Values.environment.OAUTH_CLIENT_SECRET | quote }}
+    OPENSCIENCEFRAMEWORK_DISPLAYNAME: {{ .Values.environment.DISPLAYNAME | quote }}
+    OPENSCIENCEFRAMEWORK_INFO_URL: {{ .Values.environment.INFO_URL | quote }}
+    OPENSCIENCEFRAMEWORK_HELP_URL: {{ .Values.environment.HELP_URL | quote }}
+    OPENSCIENCEFRAMEWORK_ICON: {{ .Values.environment.ICON | quote }}
+    OPENSCIENCEFRAMEWORK_METADATA_PROFILE: {{ .Values.environment.METADATA_PROFILE | quote }}
+    OPENSCIENCEFRAMEWORK_PROJECT_LINK_TEMPLATE: {{ .Values.environment.PROJECT_LINK_TEMPLATE | quote }}
+    

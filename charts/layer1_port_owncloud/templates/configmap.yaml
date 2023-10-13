@@ -21,6 +21,10 @@ data:
   OWNCLOUD_OAUTH_CLIENT_ID: {{ .OAUTH_CLIENT_ID | quote }}
   OWNCLOUD_INSTALLATION_URL: {{ .ADDRESS | quote }}
   OWNCLOUD_OAUTH_CLIENT_SECRET: {{ .OAUTH_CLIENT_SECRET | quote }}
+  OWNCLOUD_DISPLAYNAME: {{ .DISPLAYNAME | quote }}
+  OWNCLOUD_INFO_URL: {{ .INFO_URL | quote }}
+  OWNCLOUD_HELP_URL: {{ .HELP_URL | quote }}
+  OWNCLOUD_ICON: {{ .ICON | quote }}
   SERVICENAME: {{ .name | replace "." "-" | replace ":" "-" }}
   {{ if not .INTERNAL_ADDRESS }}
   OWNCLOUD_INTERNAL_INSTALLATION_URL: {{ .ADDRESS | quote }}
