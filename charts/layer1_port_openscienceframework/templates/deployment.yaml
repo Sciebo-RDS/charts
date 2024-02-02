@@ -24,12 +24,12 @@ spec:
           image: {{ template "layer1_port_openscienceframework.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-          - name: OAUTH_CLIENT_ID
+          - name: OPENSCIENCEFRAMEWORK_OAUTH_CLIENT_ID
             valueFrom:
               secretKeyRef:
                 name: osf-client
                 key: osf-client-id
-          - name: OAUTH_CLIENT_SECRET
+          - name: OPENSCIENCEFRAMEWORK_OAUTH_CLIENT_SECRET
             valueFrom:
               secretKeyRef:
                 name: osf-client
