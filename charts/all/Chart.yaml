@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: ">0.2.5"
 description: A single chart for installing whole sciebo rds ecosystem.
 name: all
-version: 0.3.1
+version: 0.3.2
 home: https://www.research-data-services.org/
 type: application
 keywords:
@@ -36,13 +36,13 @@ dependencies:
     tags:
       - layer0
   - name: layer1-port-openscienceframework
-    version: ^0.2.0
+    version: ^0.2.4
     repository: file://../layer1_port_openscienceframework
     condition: layer1-port-openscienceframework.enabled
     tags:
       - layer1
   - name: layer1-port-zenodo
-    version: ^0.2.0
+    version: ^0.2.3
     repository: file://../layer1_port_zenodo
     condition: layer1-port-zenodo.enabled
     tags:

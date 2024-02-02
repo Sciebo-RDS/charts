@@ -4,9 +4,9 @@ metadata:
   name: portzenodoconfig
   namespace: {{ .Release.Namespace }}
 data:
-  ZENODO_OAUTH_CLIENT_ID: {{ .Values.environment.OAUTH_CLIENT_ID | quote }}
+  ZENODO_OAUTH_CLIENT_ID: {{ .Values.environment.ZENODO_OAUTH_CLIENT_ID | quote }}
   ZENODO_ADDRESS: {{ .Values.environment.ADDRESS | quote }}
-  ZENODO_OAUTH_CLIENT_SECRET: {{ .Values.environment.OAUTH_CLIENT_SECRET | quote }}
+  ZENODO_OAUTH_CLIENT_SECRET: {{ .Values.environment.ZENODO_OAUTH_CLIENT_SECRET | quote }}
   ZENODO_DISPLAYNAME: {{ .Values.environment.DISPLAYNAME | quote }}
   ZENODO_INFO_URL: {{ .Values.environment.INFO_URL | quote }}
   ZENODO_HELP_URL: {{ .Values.environment.HELP_URL | quote }}
