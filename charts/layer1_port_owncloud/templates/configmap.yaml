@@ -32,4 +32,10 @@ data:
   {{ if .INTERNAL_ADDRESS }}
   OWNCLOUD_INTERNAL_INSTALLATION_URL: {{ .INTERNAL_ADDRESS | quote }}
   {{ end }}
+  {{ if not .EFSS }}
+  EFSS_SYSTEM: "owncloud"
+  {{ end }}
+  {{ if .EFSS }}
+  EFSS_SYSTEM: {{ .EFSS | quote }}
+  {{ end }}
 {{- end }}
